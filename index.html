@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Capital Management</title>
+    <link rel="icon" href="images/iso-logo.png" type="image/png">
+    <link rel="shortcut icon" href="images/iso-logo.png" type="image/png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="stylesheet" href="css/carrusel.css">
+    <link rel="stylesheet" href="css/whatsapp.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <style type="text/css">
+        header a i {
+            font-size: 1.75rem;
+        }
+
+        .menu p {
+            font-size: 1.25rem;
+        }
+
+        .menu-box ul li, .menu-box ul li a {
+            font-size: 4rem !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-box ul li:hover, .menu-box ul li a:hover {
+            transition: all 0.3s ease;
+            transform: scale(1.1);
+            font-weight: 700;
+        }
+    </style>
+
+    <header class="w-100 px-5 py-3 d-flex flex-row justify-content-between align-items-center position-fixed" style="z-index: 999; top: 0; background-color: transparent;">
+        <a href="/" class="d-flex flex-row align-items-center text-decoration-none">
+            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 150px;" />
+        </a>
+        <button id="menuToggle" class="menu d-flex flex-row align-items-center text-decoration-none text-black bg-transparent border-0">
+            <p class="poppins-extralight my-0 mx-2 py-0">MENU</p>
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark d-none"></i>
+        </button>
+    </header>
+
+    <a href="https://api.whatsapp.com/send?phone=5491132965937&text=Hola%20quiero%20más%20información." class="whatsapp-button" id="whatsappBtn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- menu box -->
+    <section class="fullscreen menu-box d-flex flex-column justify-content-center align-items-center d-none">
+        <video autoplay muted loop class="bg-video" preload="metadata">
+            <source src="videos/menu.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+        </video>
+        <ul class="d-flex flex-column justify-content-center align-items-center list-unstyled">
+            <li class="mb-3">
+                <a href="./index.html" class="poppins-medium text-black text-decoration-none">Inicio</a>
+            </li>
+            <li class="mb-3">
+                <a href="./contact.html" class="poppins-medium text-black text-decoration-none">Contacto</a>
+            </li>
+            <li class="mb-3">
+                <a href="./about-us.html" class="poppins-medium text-black text-decoration-none">Nosotros</a>
+            </li>
+            <li class="mb-3">
+                <a href="./index.html#servicios" class="poppins-medium text-black text-decoration-none" id="btn-servicios">Servicios</a>
+            </li>
+        </ul>
+    </section>
+
+    <main class="">
+        <section class="fullscreen d-flex flex-column justify-content-center align-items-center">
+            <video autoplay muted loop class="bg-video" preload="metadata" poster="images/home/poster.jpg">
+                <source src="videos/intro-optimized.mp4" type="video/mp4" />
+                Tu navegador no soporta el video.
+            </video>
+            <div class="w-75 overlay">
+                <h1 class="poppins-regular text-white text-center my-2">Tu tranquilidad financiera,</h1>
+                <h2 class="poppins-bold text-uppercase text-white text-center my-2">nuestra prioridad.</h2>
+                <p class="poppins-regular text-white text-center my-5">Una compañia argentina de inversiones y servicios
+                    de financiación en línea con gran proyección en América Latina. Brinda soluciones eficientes y
+                    estratégicas a sus clientes, tanto físicas como jurídicas.</p>
+            </div>
+        </section>
+        <section class="fullscreen d-flex flex-column justify-content-center align-items-center">
+            <h1 class="poppins-thin text-black text-center my-5">Bienvenidos a Global Capital Management</h1>
+            <article class="w-75 mx-auto my-5 h-50" style="position: relative;">
+                <video autoplay muted loop preload="metadata" poster="images/home/poster.jpg"
+                    style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 0; border-radius: 45pt;">
+                    <source src="videos/intro-optimized.mp4" type="video/mp4" />
+                    Tu navegador no soporta el video.
+                </video>
+                <div class="w-75 d-flex flex-column justify-content-center align-items-center h-100 mx-auto"
+                    style="z-index: 1; position: relative;">
+                    <h1 class="poppins-regular text-white text-center my-2">Tu tranquilidad financiera,</h1>
+                    <h2 class="poppins-bold text-uppercase text-white text-center my-2">nuestra prioridad.</h2>
+                    <p class="poppins-regular text-white text-center my-5">Una compañia argentina de inversiones y
+                        servicios de financiación en línea con gran proyección en América Latina. Brinda soluciones
+                        eficientes y estratégicas a sus clientes, tanto físicas como jurídicas.</p>
+                </div>
+            </article>
+        </section>
+        <section class="quarterscreen d-flex flex-column justify-content-center align-items-center my-5">
+            <div class="w-100 d-flex flex-column justify-content-center align-items-center mx-auto">
+                <h1 class="w-50 poppins-semibold mx-auto text-center"
+                    style="color: #498094 !important; text-shadow: none; font-size: 4rem;">INNOVACIÓN QUE TRANSFORMA</h1>
+            </div>
+        </section>
+        <section class="fullscreen d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 bg-white text-black px-5 rounded-5 d-flex flex-column justify-content-center"
+                        style="height: 50vh;">
+                        <p class="mx-auto my-0 poppins-regular">
+                            Ofrecemos <span style="color: #498094;">soluciones y servicios confiables</span> para la
+                            satisfacción de nuestros clientes, actuando en equipo para desarrollar relaciones
+                            perdurables y gestionar de forma eficiente todos los sectores, <span
+                                style="color: #498094;">incrementando el valor de cada empresa.</span>
+                        </p>
+                    </div>
+                    <div class="col-4 text-white text-center px-1 rounded-5" style="height: 50vh;">
+                        <img src="images/home/solutions1.png" alt="Soluciones" class="img-fluid rounded-5"
+                            style="width: 100%; height: 100%;object-fit: cover;" />
+                    </div>
+                    <div class="col-2 text-white text-center px-1 rounded-5" style="height: 50vh;">
+                        <img src="images/home/solutions2.png" alt="Soluciones" class="img-fluid rounded-5"
+                            style="width: 100%; height: 100%;object-fit: cover;" />
+                    </div>
+                    <div class="col-2 text-white text-center px-1 rounded-5" style="height: 50vh;">
+                        <img src="images/home/solutions3.png" alt="Soluciones" class="img-fluid rounded-5"
+                            style="width: 100%; height: 100%;object-fit: cover;" />
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-5">
+                <div class="row">
+                    <span class="col-4"></span>
+                    <span class="col-4"></span>
+                    <span class="col-2"></span>
+                    <a href="#servicios" class="col-2 btn rounded-pill" style="box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.3)">
+                        <p class="poppins-regular my-0 mx-3" style="color: #498094;">Ver servicios</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="threequarterscreen carrusel d-flex flex-column justify-content-flex-start align-items-center" id="servicios">
+            <h1 class="poppins-semibold text-black text-center my-5" style="color: #498094 !important;">Nuestros servicios exclusivos para vos</h1>
+            <div class="d-flex flex-row justify-content-center align-items-center w-100 mt-5">
+                <div class="elemento-carrusel w-25 rounded-3 d-none" id="elemento-0">
+                    <img src="images/servicios/acceso-a-comercializaciones.png"
+                        alt="Imagen de acceso a comercializaciones" class="img-fluid rounded-3" />
+                    <a href="comercializacion.html"
+                        class="btn btn-primary btn-superpuesto">Saber más</a>
+                </div>
+                <div class="elemento-carrusel w-25 rounded-3 d-none" id="elemento-1">
+                    <img src="images/servicios/prestamos.png" alt="Imagen de préstamos"
+                        class="img-fluid rounded-3" />
+                    <a href="prestamo.html" class="btn btn-primary btn-superpuesto">Saber más</a>
+                </div>
+                <div class="elemento-carrusel w-25 rounded-3" id="elemento-2">
+                    <img src="images/servicios/credito-empresas.png" alt="Imagen de crédito para empresas"
+                        class="img-fluid rounded-3" />
+                    <a href="credito-empresa.html" class="btn btn-primary btn-superpuesto">Saber
+                        más</a>
+                </div>
+                <div class="elemento-carrusel w-25 rounded-3 selected" id="elemento-3">
+                    <img src="images/servicios/credito-personal.png" alt="Imagen de crédito personal"
+                        class="img-fluid rounded-3" />
+                    <a href="credito-persona.html" class="btn btn-primary btn-superpuesto">Saber
+                        más</a>
+                </div>
+                <div class="elemento-carrusel w-25 rounded-3" id="elemento-4">
+                    <img src="images/servicios/credito-comercio.png" alt="Imagen de crédito para comercio"
+                        class="img-fluid rounded-3" />
+                    <a href="credito-comercio.html" class="btn btn-primary btn-superpuesto">Saber
+                        más</a>
+                </div>
+                <div class="elemento-carrusel w-25 rounded-3 d-none" id="elemento-5">
+                    <img src="images/servicios/acceso-a-comercializaciones.png"
+                        alt="Imagen de acceso a comercializaciones" class="img-fluid rounded-3" />
+                    <a href="comercializacion.html"
+                        class="btn btn-primary btn-superpuesto">Saber más</a>
+                </div>
+                <div class="elemento-carrusel w-25 rounded-3 d-none" id="elemento-6">
+                    <img src="images/servicios/prestamos.png" alt="Imagen de préstamos"
+                        class="img-fluid rounded-3" />
+                    <a href="prestamo.html" class="btn btn-primary btn-superpuesto">Saber más</a>
+                </div>
+            </div>
+            <div class="d-flex flex-row justify-content-center align-items-center my-5">
+                <!-- Aquí vamos a generar dinámicamente los inputs de radio -->
+                <div class="inputs-container">
+                    <!-- Radios para el estado -->
+                    <input type="radio" name="indicator" id="i1">
+                    <input type="radio" name="indicator" id="i2">
+                    <input type="radio" name="indicator" id="i3" checked>
+                    <input type="radio" name="indicator" id="i4">
+                    <input type="radio" name="indicator" id="i5">
+
+                    <div class="carousel-controls rounded-pill">
+                        <label class="indicator" for="i1"></label>
+                        <label class="indicator" for="i2"></label>
+                        <label class="indicator" for="i3"></label>
+                        <label class="indicator" for="i4"></label>
+                        <label class="indicator" for="i5"></label>
+                    </div>
+                </div>
+                <button id="toggle-autoplay" class="btn rounded-circle border-0">
+                    <i class="fa-solid fa-pause"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-flex flex-column justify-content-center align-items-center my-auto" style="background-color: #EBE9E9 !important;">
+        <section class="w-75 d-flex flex-row justify-content-between align-items-start mx-auto">
+            <article class="w-50 mx-auto my-5">
+                <h6 class="mb-3"><i class="fa-solid fa-scale-balanced me-2" style="color: #498094 !important;"></i>Asuntos legales</h6>
+                <ul>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Términos y condiciones</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Política de privacidad</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Información al usuario financiero</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Préstamos personales: Tasas, cargos y comisiones</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Contratos de adhesión - Ley 24.240</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Defensa del consumidor</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Datos legales e institucionales</a></li>
+                </ul>
+                <div class="d-flex flex-row justify-content-between align-items-end">
+                    <a href="https://www.mpf.gob.ar/aaip/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/footer/aaip.png" alt="AAIP" class="w-75 ms-4">
+                    </a>
+                    <a href="https://servicioscf.afip.gob.ar/publico/denuncias/denunciaCD.aspx" target="_blank" rel="noopener noreferrer">
+                        <img src="images/footer/data-fiscal.png" alt="Data Fiscal" class="w-75 ms-4">
+                    </a>
+                    <a href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank" rel="noopener noreferrer">
+                        <img src="images/footer/usuarios-financieros.png" alt="Usuarios Financieros" class="w-75 ms-4">
+                    </a>
+                </div>
+            </article>
+            <article class="w-50 d-flex flex-column mx-auto my-5">
+                <h6 class="mb-3"><i class="fa-solid fa-share-nodes me-2" style="color: #498094 !important;"></i> Nuestras redes</h6>
+                <ul class="w-25 d-flex flex-row justify-content-start align-items-center list-unstyled">
+                    <li class="me-0"><a href="https://www.instagram.com/glofinanzas/" target="_blank" rel="noopener noreferrer"><img src="images/footer/instagram.png" alt="Instagram" class="w-50"></a></li>
+                    <li class="me-0"><a href="https://www.facebook.com/glofinanzas" target="_blank" rel="noopener noreferrer"><img src="images/footer/facebook.png" alt="Facebook" class="w-50"></a></li>
+                </ul>
+                <a href="" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de arrepentimiento</a>
+                <a href="" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de baja</a>
+            </article>
+        </section>
+        <script src="js/carrusel.js"></script>
+        <script src="js/whatsapp.js"></script>
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+            const barsIcon = menuToggle.querySelector('.fa-bars');
+            const xmarkIcon = menuToggle.querySelector('.fa-xmark');
+            const main = document.querySelector('main');
+            const footer = document.querySelector('footer');
+            const menuBox = document.querySelector('.menu-box');
+            const btnServicios = document.getElementById('btn-servicios');
+
+            menuToggle.addEventListener('click', () => {
+                barsIcon.classList.toggle('d-none');
+                xmarkIcon.classList.toggle('d-none');
+                if (menuBox.classList.contains('d-none')) {
+                    menuBox.classList.remove('d-none');
+                    main.classList.add('d-none');
+                    footer.classList.add('d-none');
+                } else {
+                    menuBox.classList.add('d-none');
+                    main.classList.remove('d-none');
+                    footer.classList.remove('d-none');
+                }
+            });
+
+            btnServicios.addEventListener('click', () => {
+                menuBox.classList.add('d-none');
+                main.classList.remove('d-none');
+                footer.classList.remove('d-none');
+            });
+        </script>
+    </footer>
+</body>
+</html>

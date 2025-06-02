@@ -1,0 +1,106 @@
+.elemento-carrusel {
+    position: relative;
+    overflow: hidden;
+}
+
+.elemento-carrusel .btn-superpuesto {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background-color: #5CA4BE;
+    border: none;
+}
+
+.selected {
+    transform: scale(1.25);
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.selected .btn-superpuesto {
+    transform: translateX(-50%) scale(0.8);
+}
+
+.elemento-carrusel img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inputs-container {
+    display: flex;
+    gap: 1rem;
+    margin-right: 1rem;
+}
+
+#toggle-autoplay {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    gap: 1rem;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.indicator::before {
+    content: '';
+    display: block;
+    transition: all 0.3s ease;
+}
+
+#i1:not(:checked)~.carousel-controls label[for="i1"]::before,
+#i2:not(:checked)~.carousel-controls label[for="i2"]::before,
+#i3:not(:checked)~.carousel-controls label[for="i3"]::before,
+#i4:not(:checked)~.carousel-controls label[for="i4"]::before,
+#i5:not(:checked)~.carousel-controls label[for="i5"]::before {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#i1:checked~.carousel-controls label[for="i1"]::before,
+#i2:checked~.carousel-controls label[for="i2"]::before,
+#i3:checked~.carousel-controls label[for="i3"]::before,
+#i4:checked~.carousel-controls label[for="i4"]::before,
+#i5:checked~.carousel-controls label[for="i5"]::before {
+    width: 3rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background-color: #5CA4BE;
+}
+
+#toggle-autoplay i {
+    font-size: 1.5rem;
+    color: #5CA4BE;
+}
+
+#toggle-autoplay {
+    padding: 1rem !important;
+}
