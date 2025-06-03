@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Capital Management</title>
+    <link rel="icon" href="images/iso-logo.png" type="image/png">
+    <link rel="shortcut icon" href="images/iso-logo.png" type="image/png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="stylesheet" href="css/carrusel.css">
+    <link rel="stylesheet" href="css/whatsapp.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <style type="text/css">
+        header a i {
+            font-size: 1.75rem;
+        }
+
+        .menu p {
+            font-size: 1.25rem;
+        }
+
+        .menu-box ul li, .menu-box ul li a {
+            font-size: 4rem !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-box ul li:hover, .menu-box ul li a:hover {
+            transition: all 0.3s ease;
+            transform: scale(1.1);
+            font-weight: 700;
+        }
+    </style>
+
+    <header class="w-100 px-5 py-3 d-flex flex-row justify-content-between align-items-center position-fixed" style="z-index: 999; top: 0; background-color: transparent;">
+        <a href="index.html" class="d-flex flex-row align-items-center text-decoration-none">
+            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 150px;" />
+        </a>
+        <button id="menuToggle" class="menu d-flex flex-row align-items-center text-decoration-none text-black bg-transparent border-0">
+            <p class="poppins-extralight my-0 mx-2 py-0">MENU</p>
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark d-none"></i>
+        </button>
+    </header>
+
+    <a href="https://api.whatsapp.com/send?phone=5491132965937&text=Hola%20quiero%20más%20información." class="whatsapp-button" id="whatsappBtn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- menu box -->
+    <section class="fullscreen menu-box d-flex flex-column justify-content-center align-items-center d-none">
+        <video autoplay muted loop class="bg-video" preload="metadata">
+            <source src="videos/menu.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+        </video>
+        <ul class="d-flex flex-column justify-content-center align-items-center list-unstyled">
+            <li class="mb-3">
+                <a href="./index.html" class="poppins-medium text-black text-decoration-none">Inicio</a>
+            </li>
+            <li class="mb-3">
+                <a href="./contact.html" class="poppins-medium text-black text-decoration-none">Contacto</a>
+            </li>
+            <li class="mb-3">
+                <a href="./about-us.html" class="poppins-medium text-black text-decoration-none">Nosotros</a>
+            </li>
+            <li class="mb-3">
+                <a href="./index.html#servicios" class="poppins-medium text-black text-decoration-none" id="btn-servicios">Servicios</a>
+            </li>
+        </ul>
+    </section>
+
+    <main class="">
+        <section class="fullscreen position-relative d-flex flex-column justify-content-center align-items-start bg-light" 
+            style="background-image: url('images/servicios/bg.png'); background-size: cover; background-position: center;">
+            
+            <!-- Overlay con opacidad -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.4); z-index: 0;"></div>
+
+            <!-- Contenido por encima del fondo y el overlay -->
+            <div class="position-relative w-75 mx-auto" style="z-index: 1;">
+                <div class="w-75 mt-5 ms-0">
+                    <h1 class="poppins-semibold text-uppercase text-white">tu crédito empresa</h1>
+                    <h1 class="poppins-thin text-white">a un paso</h1>
+                    <p class="poppins-regular text-black">Para pedir tu préstamo completá el siguiente formulario</p>
+                </div>
+                <form class="w-75 my-3 ms-0">
+                    <div class="form-group w-75 mb-4">
+                        <input type="text" class="form-control poppins-regular{{ $errors->has('name') ? ' error' : '' }}" id="name" name="name" placeholder="Nombre completo*" required>
+                    </div>
+
+                    <div class="form-group w-75 mb-4">
+                        <input type="email" class="form-control poppins-regular{{ $errors->has('email') ? ' error' : '' }}" id="email" name="email" placeholder="Email*" required>
+                    </div>
+
+                    <div class="form-group w-75 mb-4">
+                        <input type="tel" class="form-control poppins-regular{{ $errors->has('phone') ? ' error' : '' }}" id="phone" name="phone" placeholder="Número de teléfono + cod. área*" required>
+                    </div>
+                    
+                    <div class="form-group w-75 mb-4">
+                        <input type="text" class="form-control poppins-regular{{ $errors->has('cuit') ? ' error' : '' }}" id="cuit" name="cuit" placeholder="CUIT*" required>
+                    </div>
+
+                    <div class="form-group w-75 mb-4">
+                        <select class="form-control poppins-regular{{ $errors->has('occupation') ? ' error' : '' }}" id="occupation" name="occupation" required>
+                            <option value="" disabled selected>Seleccione su ocupación</option>
+                            <option value="empleado_publico">Empleado público</option>
+                            <option value="empleado_privado">Empleado privado</option>
+                            <option value="pasivo_pensionado_jubilado">Pasivo, pensionado o jubilado</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group w-75 mb-4">
+                        <select class="form-control poppins-regular{{ $errors->has('bank') ? ' error' : '' }}" id="bank" name="bank" required>
+                            <option value="" disabled selected>Seleccione su banco</option>
+                            <option value="00007">Banco Galicia</option>
+                            <option value="00011">Banco Nación</option>
+                            <option value="00014">Banco Provincia</option>
+                            <option value="00015">ICBC</option>
+                            <option value="00016">Citibank</option>
+                            <option value="00017">BBVA</option>
+                            <option value="00020">Banco Córdoba</option>
+                            <option value="00027">Supervielle</option>
+                            <option value="00029">Banco Ciudad</option>
+                            <option value="00034">Banco Patagonia</option>
+                            <option value="00044">Hipotecario</option>
+                            <option value="00045">Banco San Juan</option>
+                            <option value="00065">Banco Municipal de Rosario</option>
+                            <option value="00072">Banco Santander</option>
+                            <option value="00083">Banco Chubut</option>
+                            <option value="00086">Banco Santa Cruz</option>
+                            <option value="00093">Banco La Pampa</option>
+                            <option value="00094">Banco de Corrientes</option>
+                            <option value="00097">BPN</option>
+                            <option value="00131">Bank of China</option>
+                            <option value="00143">Brubank</option>
+                            <option value="00147">BIBANK</option>
+                            <option value="00150">Banco Galicia</option>
+                            <option value="00165">J.P. Morgan</option>
+                            <option value="00191">Credicoop</option>
+                            <option value="00198">Banco de Valores</option>
+                            <option value="00247">Roela</option>
+                            <option value="00254">Mariva</option>
+                            <option value="00266">BNP Paribas</option>
+                            <option value="00268">Banco Tierra del Fuego</option>
+                            <option value="00269">BROU (Uruguay)</option>
+                            <option value="00277">Banco Sáenz</option>
+                            <option value="00281">Meridian</option>
+                            <option value="00285">Banco Macro</option>
+                            <option value="00299">Comafi</option>
+                            <option value="00300">BICE</option>
+                            <option value="00301">Piano</option>
+                            <option value="00305">Banco Julio</option>
+                            <option value="00309">Banco Rioja</option>
+                            <option value="00310">Banco del Sol</option>
+                            <option value="00311">NBCH</option>
+                            <option value="00312">Voii</option>
+                            <option value="00315">Banco Formosa</option>
+                            <option value="00319">CMF</option>
+                            <option value="00321">Banco Santiago del Estero</option>
+                            <option value="00322">Banco Industrial</option>
+                            <option value="00330">Banco Santa Fe</option>
+                            <option value="00331">Cetelem</option>
+                            <option value="00332">BSF</option>
+                            <option value="00338">BST</option>
+                            <option value="00339">RCI Banque</option>
+                            <option value="00340">BACS</option>
+                            <option value="00341">Masventas</option>
+                            <option value="00384">Wilobank</option>
+                            <option value="00386">Banco Entre Ríos</option>
+                            <option value="00389">Columbia</option>
+                            <option value="00426">Bica</option>
+                            <option value="00431">Coinag</option>
+                            <option value="00432">Banco de Comercio</option>
+                            <option value="00435">Sucrédito</option>
+                            <option value="00448">Dino</option>
+                            <option value="44077">CFA</option>
+                            <option value="44088">Volkswagen Financial Services</option>
+                            <option value="44092">FCA Financiera</option>
+                            <option value="44093">GPAT</option>
+                            <option value="44094">Mercedes-Benz Financiera</option>
+                            <option value="44095">Rombo</option>
+                            <option value="44096">John Deere Credit</option>
+                            <option value="44098">PSA Finance</option>
+                            <option value="44099">Toyota Financiera</option>
+                            <option value="45030">Naranja X</option>
+                            <option value="45056">Montemar</option>
+                            <option value="45072">Reba</option>
+                            <option value="65203">Crédito Regional</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group w-75 mb-4">
+                        <input type="number" class="form-control poppins-regular{{ $errors->has('amount') ? ' error' : '' }}" id="amount" name="amount" placeholder="Monto a solicitar*" required>
+                    </div>
+
+                    <div class="form-group w-75 mb-4">
+                        <textarea class="form-control poppins-regular{{ $errors->has('message') ? ' error' : '' }}" id="message" name="message" rows="1" placeholder="Escriba su mensaje"></textarea>
+                    </div>
+
+                    <div class="form-check w-75 mb-4">
+                        <input type="checkbox" class="form-check-input{{ $errors->has('terms') ? ' error' : '' }}" id="terms" name="terms" required>
+                        <label class="form-check-label " for="terms">
+                            Acepto los <a href="" class="text-black">Términos y Condiciones</a> y la <a href="" class="text-black">Política de Privacidad</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-light rounded-pill w-25 mb-4 poppins-semibold" style="color: #498094 !important;">Enviar</button>
+                    
+                    <!-- {{-- mensaje de error --}}
+                    @if ($errors->any())
+                        <div class="alert alert-danger w-75">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    
+                    {{-- mensaje de éxito --}}
+                    @if (session('success'))
+                        <div class="alert alert-success w-75">
+                            {{ session('success') }}
+                        </div>
+                    @endif -->
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-flex flex-column justify-content-center align-items-center my-auto" style="background-color: #EBE9E9 !important;">
+        <section class="w-75 d-flex flex-row justify-content-between align-items-start mx-auto">
+            <article class="w-50 mx-auto my-5">
+                <h6 class="mb-3"><i class="fa-solid fa-scale-balanced me-2" style="color: #498094 !important;"></i>Asuntos legales</h6>
+                <ul>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Términos y condiciones</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Política de privacidad</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Información al usuario financiero</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Préstamos personales: Tasas, cargos y comisiones</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Contratos de adhesión - Ley 24.240</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Defensa del consumidor</a></li>
+                    <li class="poppins-thin mb-2" style=""><a href="" class="" style="color: black;">Datos legales e institucionales</a></li>
+                </ul>
+                <div class="d-flex flex-row justify-content-between align-items-end">
+                    <a href="https://www.mpf.gob.ar/aaip/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/footer/aaip.png" alt="AAIP" class="w-75 ms-4">
+                    </a>
+                    <a href="https://servicioscf.afip.gob.ar/publico/denuncias/denunciaCD.aspx" target="_blank" rel="noopener noreferrer">
+                        <img src="images/footer/data-fiscal.png" alt="Data Fiscal" class="w-75 ms-4">
+                    </a>
+                    <a href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank" rel="noopener noreferrer">
+                        <img src="images/footer/usuarios-financieros.png" alt="Usuarios Financieros" class="w-75 ms-4">
+                    </a>
+                </div>
+            </article>
+            <article class="w-50 d-flex flex-column mx-auto my-5">
+                <h6 class="mb-3"><i class="fa-solid fa-share-nodes me-2" style="color: #498094 !important;"></i> Nuestras redes</h6>
+                <ul class="w-25 d-flex flex-row justify-content-start align-items-center list-unstyled">
+                    <li class="me-0"><a href="https://www.instagram.com/glofinanzas/" target="_blank" rel="noopener noreferrer"><img src="images/footer/instagram.png" alt="Instagram" class="w-50"></a></li>
+                    <li class="me-0"><a href="https://www.facebook.com/glofinanzas" target="_blank" rel="noopener noreferrer"><img src="images/footer/facebook.png" alt="Facebook" class="w-50"></a></li>
+                </ul>
+                <a href="./arrepentimiento.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de arrepentimiento</a>
+                <a href="./baja.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de baja</a>
+            </article>
+        </section>
+        <script src="js/carrusel.js"></script>
+        <script src="js/whatsapp.js"></script>
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+            const barsIcon = menuToggle.querySelector('.fa-bars');
+            const xmarkIcon = menuToggle.querySelector('.fa-xmark');
+            const main = document.querySelector('main');
+            const footer = document.querySelector('footer');
+            const menuBox = document.querySelector('.menu-box');
+            const btnServicios = document.getElementById('btn-servicios');
+
+            menuToggle.addEventListener('click', () => {
+                barsIcon.classList.toggle('d-none');
+                xmarkIcon.classList.toggle('d-none');
+                if (menuBox.classList.contains('d-none')) {
+                    menuBox.classList.remove('d-none');
+                    main.classList.add('d-none');
+                    footer.classList.add('d-none');
+                } else {
+                    menuBox.classList.add('d-none');
+                    main.classList.remove('d-none');
+                    footer.classList.remove('d-none');
+                }
+            });
+
+            btnServicios.addEventListener('click', () => {
+                menuBox.classList.add('d-none');
+                main.classList.remove('d-none');
+                footer.classList.remove('d-none');
+            });
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                window.scrollTo(0, 1);
+            });
+        </script>
+    </footer>
+</body>
+</html>
