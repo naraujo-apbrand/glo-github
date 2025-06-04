@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #498094;;
+    --secondary-color: #50E3C2;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
 .poppins-thin {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
