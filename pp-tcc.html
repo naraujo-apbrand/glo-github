@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Capital Management</title>
+    <link rel="icon" href="images/iso-logo.png" type="image/png">
+    <link rel="shortcut icon" href="images/iso-logo.png" type="image/png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="stylesheet" href="css/carrusel.css">
+    <link rel="stylesheet" href="css/whatsapp.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <style type="text/css">
+        header a i {
+            font-size: 1.75rem;
+        }
+
+        .menu p {
+            font-size: 1.25rem;
+        }
+
+        .menu-box ul li, .menu-box ul li a {
+            font-size: 4rem !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-box ul li:hover, .menu-box ul li a:hover {
+            transition: all 0.3s ease;
+            transform: scale(1.1);
+            font-weight: 700;
+        }
+    </style>
+
+    <header class="w-100 px-5 py-3 d-flex flex-row justify-content-between align-items-center position-fixed" style="z-index: 999; top: 0; background-color: transparent;">
+        <a href="index.html" class="d-flex flex-row align-items-center text-decoration-none">
+            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 150px;" />
+        </a>
+        <button id="menuToggle" class="menu d-flex flex-row align-items-center text-decoration-none text-black bg-transparent border-0">
+            <p class="poppins-extralight my-0 mx-2 py-0">MENU</p>
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark d-none"></i>
+        </button>
+    </header>
+
+    <a href="https://api.whatsapp.com/send?phone=5491132965937&text=Hola%20quiero%20más%20información." class="whatsapp-button" id="whatsappBtn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- menu box -->
+    <section class="fullscreen menu-box d-flex flex-column justify-content-center align-items-center d-none">
+        <video autoplay muted loop class="bg-video" preload="metadata">
+            <source src="videos/menu.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+        </video>
+        <ul class="d-flex flex-column justify-content-center align-items-center list-unstyled">
+            <li class="mb-3">
+                <a href="./index.html" class="poppins-medium text-black text-decoration-none">Inicio</a>
+            </li>
+            <li class="mb-3">
+                <a href="./contact.html" class="poppins-medium text-black text-decoration-none">Contacto</a>
+            </li>
+            <li class="mb-3">
+                <a href="./about-us.html" class="poppins-medium text-black text-decoration-none">Nosotros</a>
+            </li>
+            <li class="mb-3">
+                <a href="./index.html#servicios" class="poppins-medium text-black text-decoration-none" id="btn-servicios">Servicios</a>
+            </li>
+        </ul>
+    </section>
+
+    <main class="w-75 min-vh-100 d-flex flex-column justify-content-center align-items-start mx-auto my-5 pt-5">
+        <h1 class="poppins-semibold my-5 mx-5" style="color: #498094 !important;">Tasa, cargos y comisiones</h1>
+
+        <p class="poppins-light mx-5">Vigencia TASAS: al 31 de Enero de 2025.</p>
+        <p class="poppins-light mx-5">Vigencia COMISIONES: a partir del 01 de Marzo de 2025.</p>
+
+        <table class="table border-0 mt-3 mx-5">
+            <thead class="border-0">
+                <tr class="border-0">
+                    <th scope="col" class="poppins-semibold border-0 mx-0 px-0">Concepto</th>
+                    <th scope="col" class="poppins-semibold border-0 mx-0 px-0">Mínimo</th>
+                    <th scope="col" class="poppins-semibold border-0 mx-0 px-0">Máximo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-0">
+                    <td class="poppins-light border-0 mx-0 px-0">Montos</td>
+                    <td class="poppins-light border-0 mx-0 px-0">$30.000</td>
+                    <td class="poppins-light border-0 mx-0 px-0">$3.000.000</td>
+                </tr>
+                <tr>
+                    <td class="poppins-light border-0 mx-0 px-0">Plazos</td>
+                    <td class="poppins-light border-0 mx-0 px-0">1 mes</td>
+                    <td class="poppins-light border-0 mx-0 px-0">36 meses</td>
+                </tr>
+                <tr>
+                    <td class="poppins-light border-0 mx-0 px-0">T.N.A</td>
+                    <td class="poppins-light border-0 mx-0 px-0">170,58%</td>
+                    <td class="poppins-light border-0 mx-0 px-0">581,96%</td>
+                </tr>
+                <tr>
+                    <td class="poppins-light border-0 mx-0 px-0">T.E.A (sin IVA)</td>
+                    <td class="poppins-light border-0 mx-0 px-0"></td>
+                    <td class="poppins-light border-0 mx-0 px-0">484,70% <sup>(*)</sup></td>
+                </tr>
+                <tr>
+                    <td class="poppins-light border-0 mx-0 px-0">CFTNA – Sin IVA</td>
+                    <td class="poppins-light border-0 mx-0 px-0"></td>
+                    <td class="poppins-light border-0 mx-0 px-0">190,08% <sup>(*)</sup></td>
+                </tr>
+                <tr>
+                    <td class="poppins-light border-0 mx-0 px-0">CFTNA – Con IVA</td>
+                    <td class="poppins-light border-0 mx-0 px-0"></td>
+                    <td class="poppins-light border-0 mx-0 px-0">230,00% <sup>(*)</sup></td>
+                </tr>
+                <tr>
+                    <td class="poppins-light border-0 mx-0 px-0">Comisión por Cancelación total <sup>1</sup></td>
+                    <td class="poppins-light border-0 mx-0 px-0">0,00% <sup>2</sup></td>
+                    <td class="poppins-light border-0 mx-0 px-0">25,00% <sup>3</sup></td>
+                </tr>
+                <tr>
+                    <td class="poppins-light border-0 mx-0 px-0">Comisión por Cancelación parcial <sup>1</sup></td>
+                    <td class="poppins-light border-0 mx-0 px-0"></td>
+                    <td class="poppins-light border-0 mx-0 px-0">25,00% <sup>3</sup></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="poppins-light mx-5">Tasa Interés Punitorio en $ (tasa equivalente al 50% de la tasa de interés compensado vigente):</p>
+        <ol class="poppins-light mx-5">
+            <li>Sobre Capital a Cancelar</li>
+            <li>Sólo para cancelación total dentro de los 10 días siguientes de realizada la transferencia</li>
+            <li>Incluye IVA</li>
+        </ol>
+
+        <p class="poppins-light mx-5">(*) Ejemplo estimado de préstamo: Monto desembolsado: $10.000 en 12 cuotas mensuales de $2750 cada una (el importe de la cuota incluye Capital, Intereses, Gastos de originación e IVA).</p>
+
+        
+        
+    </main>
+
+    <footer class="d-flex flex-column justify-content-center align-items-center my-auto" style="background-color: #EBE9E9 !important;">
+        <section class="w-75 d-flex flex-row justify-content-between align-items-start mx-auto">
+            <article class="w-50 mx-auto my-5">
+                <h6 class="mb-3"><i class="fa-solid fa-scale-balanced me-2" style="color: #498094 !important;"></i>Asuntos legales</h6>
+                <ul>
+                    <li class="poppins-thin mb-2"><a href="tyc.html" class="" style="color: black;">Términos y condiciones</a></li>
+                    <li class="poppins-thin mb-2"><a href="pp.html" class="" style="color: black;">Política de privacidad</a></li>
+                    <li class="poppins-thin mb-2"><a href="iuf.html" class="" style="color: black;">Información al usuario financiero</a></li>
+                    <li class="poppins-thin mb-2"><a href="pp-tcc.html" class="" style="color: black;">Préstamos personales: Tasas, cargos y comisiones</a></li>
+                    <li class="poppins-thin mb-2"><a href="ca.html" class="" style="color: black;">Contratos de adhesión - Ley 24.240</a></li>
+                    <li class="poppins-thin mb-2"><a href="dc.html" class="" style="color: black;">Defensa del consumidor</a></li>
+                    <li class="poppins-thin mb-2"><a href="dli.html" class="" style="color: black;">Datos legales e institucionales</a></li>
+                </ul>
+                <div class="d-flex flex-row justify-content-between align-items-end">
+                    <a href="https://www.mpf.gob.ar/aaip/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/footer/aaip.png" alt="AAIP" class="w-75 ms-4">
+                    </a>
+                    <a href="https://servicioscf.afip.gob.ar/publico/denuncias/denunciaCD.aspx" target="_blank" rel="noopener noreferrer">
+                        <img src="images/footer/data-fiscal.png" alt="Data Fiscal" class="w-75 ms-4">
+                    </a>
+                    <a href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank" rel="noopener noreferrer">
+                        <img src="images/footer/usuarios-financieros.png" alt="Usuarios Financieros" class="w-75 ms-4">
+                    </a>
+                </div>
+            </article>
+            <article class="w-50 d-flex flex-column mx-auto my-5">
+                <h6 class="mb-3"><i class="fa-solid fa-share-nodes me-2" style="color: #498094 !important;"></i> Nuestras redes</h6>
+                <ul class="w-25 d-flex flex-row justify-content-start align-items-center list-unstyled">
+                    <li class="me-0"><a href="https://www.instagram.com/glofinanzas/" target="_blank" rel="noopener noreferrer"><img src="images/footer/instagram.png" alt="Instagram" class="w-50"></a></li>
+                    <li class="me-0"><a href="https://www.facebook.com/glofinanzas" target="_blank" rel="noopener noreferrer"><img src="images/footer/facebook.png" alt="Facebook" class="w-50"></a></li>
+                </ul>
+                <a href="./arrepentimiento.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de arrepentimiento</a>
+                <a href="./baja.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de baja</a>
+            </article>
+        </section>
+        <script src="js/carrusel.js"></script>
+        <script src="js/whatsapp.js"></script>
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+            const barsIcon = menuToggle.querySelector('.fa-bars');
+            const xmarkIcon = menuToggle.querySelector('.fa-xmark');
+            const main = document.querySelector('main');
+            const footer = document.querySelector('footer');
+            const menuBox = document.querySelector('.menu-box');
+            const btnServicios = document.getElementById('btn-servicios');
+
+            menuToggle.addEventListener('click', () => {
+                barsIcon.classList.toggle('d-none');
+                xmarkIcon.classList.toggle('d-none');
+                if (menuBox.classList.contains('d-none')) {
+                    menuBox.classList.remove('d-none');
+                    main.classList.add('d-none');
+                    footer.classList.add('d-none');
+                } else {
+                    menuBox.classList.add('d-none');
+                    main.classList.remove('d-none');
+                    footer.classList.remove('d-none');
+                }
+            });
+
+            btnServicios.addEventListener('click', () => {
+                menuBox.classList.add('d-none');
+                main.classList.remove('d-none');
+                footer.classList.remove('d-none');
+            });
+        </script>
+    </footer>
+</body>
+</html>

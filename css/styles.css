@@ -6,7 +6,6 @@
 
 :root {
     --primary-color: #498094;
-    ;
     --secondary-color: #50E3C2;
 }
 
@@ -218,3 +217,30 @@ header a i {
     }
 }
 /* FIN HOME */
+
+/* FORMS */
+input, select, textarea {
+    height: 60px !important;
+    border: 1.72px solid #498094 !important;
+    padding-top: 0 !important;
+    padding-right: 1rem !important;
+    padding-bottom: 0 !important;
+    padding-left: 2rem !important;
+}
+
+input::placeholder {
+    color: #999999 !important;
+}
+
+textarea::placeholder {
+    display: flex;
+    align-items: center;
+    line-height: 60px;
+    color: #999999 !important;
+}
+
+select:invalid {
+    padding-left: 2rem !important;
+    color: #999999 !important;
+}
+/* FIN FORMS */

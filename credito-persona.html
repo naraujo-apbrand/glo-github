@@ -23,32 +23,13 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-    <style type="text/css">
-        header a i {
-            font-size: 1.75rem;
-        }
-
-        .menu p {
-            font-size: 1.25rem;
-        }
-
-        .menu-box ul li, .menu-box ul li a {
-            font-size: 4rem !important;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .menu-box ul li:hover, .menu-box ul li a:hover {
-            transition: all 0.3s ease;
-            transform: scale(1.1);
-            font-weight: 700;
-        }
-    </style>
-
-    <header class="w-100 px-5 py-3 d-flex flex-row justify-content-between align-items-center position-fixed" style="z-index: 999; top: 0; background-color: transparent;">
+    <header class="bg-light w-100 w-sm-75 px-4 py-3 d-flex flex-row justify-content-between align-items-center"
+        style="z-index: 10;">
         <a href="index.html" class="d-flex flex-row align-items-center text-decoration-none">
-            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 150px;" />
+            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 135px;" />
         </a>
-        <button id="menuToggle" class="menu d-flex flex-row align-items-center text-decoration-none text-black bg-transparent border-0">
+        <button id="menuToggle"
+            class="menu d-flex flex-row align-items-center text-decoration-none text-black bg-transparent border-0">
             <p class="poppins-extralight my-0 mx-2 py-0">MENU</p>
             <i class="fa-solid fa-bars"></i>
             <i class="fa-solid fa-xmark d-none"></i>
@@ -67,26 +48,27 @@
         </video>
         <ul class="d-flex flex-column justify-content-center align-items-center list-unstyled">
             <li class="mb-3">
-                <a href="./index.html" class="poppins-medium text-black text-decoration-none">Inicio</a>
+                <a href="./index.html" class="poppins-regular text-black text-decoration-none">Inicio</a>
             </li>
             <li class="mb-3">
-                <a href="./contact.html" class="poppins-medium text-black text-decoration-none">Contacto</a>
+                <a href="./contact.html" class="poppins-regular text-black text-decoration-none">Contacto</a>
             </li>
             <li class="mb-3">
-                <a href="./about-us.html" class="poppins-medium text-black text-decoration-none">Nosotros</a>
+                <a href="./about-us.html" class="poppins-regular text-black text-decoration-none">Nosotros</a>
             </li>
             <li class="mb-3">
-                <a href="./index.html#servicios" class="poppins-medium text-black text-decoration-none" id="btn-servicios">Servicios</a>
+                <a href="./index.html#servicios" class="poppins-regular text-black text-decoration-none"
+                    id="btn-servicios">Servicios</a>
             </li>
         </ul>
     </section>
 
     <main class="">
-        <section class="fullscreen position-relative d-flex flex-column justify-content-center align-items-start bg-light" 
+        <section class="position-relative d-flex flex-column justify-content-center align-items-start bg-light" 
             style="background-image: url('images/servicios/bg.png'); background-size: cover; background-position: center;">
             
             <!-- Overlay con opacidad -->
-            <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.4); z-index: 0;"></div>
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.2); z-index: 0;"></div>
 
             <!-- Contenido por encima del fondo y el overlay -->
             <div class="position-relative w-75 mx-auto" style="z-index: 1;">
@@ -95,9 +77,9 @@
                     <h1 class="poppins-thin text-white">a un paso</h1>
                     <p class="poppins-regular text-black">Para pedir tu préstamo completá el siguiente formulario</p>
                 </div>
-                <form class="w-75 my-3 ms-0">
+                <form class="w-75 mt-3 mb-5 ms-0">
                     <div class="form-group w-75 mb-4">
-                        <input type="text" class="form-control poppins-regular{{ $errors->has('name') ? ' error' : '' }}" id="name" name="name" placeholder="Nombre completo*" required>
+                        <input type="text" class="form-control poppins-regular{{ $errors->has('name') ? ' error' : '' }}" id="name" name="name" placeholder="Nombre y apellido*" required>
                     </div>
 
                     <div class="form-group w-75 mb-4">
@@ -114,7 +96,7 @@
 
                     <div class="form-group w-75 mb-4">
                         <select class="form-control poppins-regular{{ $errors->has('occupation') ? ' error' : '' }}" id="occupation" name="occupation" required>
-                            <option value="" disabled selected>Seleccione su ocupación</option>
+                            <option value="" disabled selected>Seleccione su ocupación*</option>
                             <option value="empleado_publico">Empleado público</option>
                             <option value="empleado_privado">Empleado privado</option>
                             <option value="pasivo_pensionado_jubilado">Pasivo, pensionado o jubilado</option>
@@ -124,81 +106,36 @@
 
                     <div class="form-group w-75 mb-4">
                         <select class="form-control poppins-regular{{ $errors->has('bank') ? ' error' : '' }}" id="bank" name="bank" required>
-                            <option value="" disabled selected>Seleccione su banco</option>
+                            <option value="" disabled selected>Seleccione su banco*</option>
                             <option value="00007">Banco Galicia</option>
-                            <option value="00011">Banco Nación</option>
-                            <option value="00014">Banco Provincia</option>
-                            <option value="00015">ICBC</option>
-                            <option value="00016">Citibank</option>
                             <option value="00017">BBVA</option>
                             <option value="00020">Banco Córdoba</option>
-                            <option value="00027">Supervielle</option>
                             <option value="00029">Banco Ciudad</option>
-                            <option value="00034">Banco Patagonia</option>
                             <option value="00044">Hipotecario</option>
                             <option value="00045">Banco San Juan</option>
-                            <option value="00065">Banco Municipal de Rosario</option>
-                            <option value="00072">Banco Santander</option>
                             <option value="00083">Banco Chubut</option>
                             <option value="00086">Banco Santa Cruz</option>
-                            <option value="00093">Banco La Pampa</option>
                             <option value="00094">Banco de Corrientes</option>
-                            <option value="00097">BPN</option>
-                            <option value="00131">Bank of China</option>
-                            <option value="00143">Brubank</option>
                             <option value="00147">BIBANK</option>
-                            <option value="00150">Banco Galicia</option>
-                            <option value="00165">J.P. Morgan</option>
                             <option value="00191">Credicoop</option>
                             <option value="00198">Banco de Valores</option>
-                            <option value="00247">Roela</option>
-                            <option value="00254">Mariva</option>
-                            <option value="00266">BNP Paribas</option>
-                            <option value="00268">Banco Tierra del Fuego</option>
-                            <option value="00269">BROU (Uruguay)</option>
-                            <option value="00277">Banco Sáenz</option>
-                            <option value="00281">Meridian</option>
+                            <option value="00269">BROU</option>
                             <option value="00285">Banco Macro</option>
                             <option value="00299">Comafi</option>
                             <option value="00300">BICE</option>
-                            <option value="00301">Piano</option>
                             <option value="00305">Banco Julio</option>
-                            <option value="00309">Banco Rioja</option>
                             <option value="00310">Banco del Sol</option>
-                            <option value="00311">NBCH</option>
-                            <option value="00312">Voii</option>
                             <option value="00315">Banco Formosa</option>
                             <option value="00319">CMF</option>
                             <option value="00321">Banco Santiago del Estero</option>
                             <option value="00322">Banco Industrial</option>
-                            <option value="00330">Banco Santa Fe</option>
-                            <option value="00331">Cetelem</option>
                             <option value="00332">BSF</option>
                             <option value="00338">BST</option>
-                            <option value="00339">RCI Banque</option>
-                            <option value="00340">BACS</option>
-                            <option value="00341">Masventas</option>
-                            <option value="00384">Wilobank</option>
-                            <option value="00386">Banco Entre Ríos</option>
                             <option value="00389">Columbia</option>
                             <option value="00426">Bica</option>
                             <option value="00431">Coinag</option>
                             <option value="00432">Banco de Comercio</option>
-                            <option value="00435">Sucrédito</option>
                             <option value="00448">Dino</option>
-                            <option value="44077">CFA</option>
-                            <option value="44088">Volkswagen Financial Services</option>
-                            <option value="44092">FCA Financiera</option>
-                            <option value="44093">GPAT</option>
-                            <option value="44094">Mercedes-Benz Financiera</option>
-                            <option value="44095">Rombo</option>
-                            <option value="44096">John Deere Credit</option>
-                            <option value="44098">PSA Finance</option>
-                            <option value="44099">Toyota Financiera</option>
-                            <option value="45030">Naranja X</option>
-                            <option value="45056">Montemar</option>
-                            <option value="45072">Reba</option>
-                            <option value="65203">Crédito Regional</option>
                         </select>
                     </div>
 
@@ -210,107 +147,119 @@
                         <textarea class="form-control poppins-regular{{ $errors->has('message') ? ' error' : '' }}" id="message" name="message" rows="1" placeholder="Escriba su mensaje"></textarea>
                     </div>
 
-                    <div class="form-check w-75 mb-4">
-                        <input type="checkbox" class="form-check-input{{ $errors->has('terms') ? ' error' : '' }}" id="terms" name="terms" required>
+                    <div class="form-check w-75 mb-4 d-flex flex-row align-items-center ps-0">
+                        <input type="checkbox" class="form-check-input{{ $errors->has('terms') ? ' error' : '' }} me-2" id="terms" name="terms" required>
                         <label class="form-check-label " for="terms">
-                            Acepto los <a href="" class="text-black">Términos y Condiciones</a> y la <a href="" class="text-black">Política de Privacidad</a>
+                            Acepto los <a href="./tyc.html" class="text-black">Términos y Condiciones</a> y la <a href="./pp.html" class="text-black">Política de Privacidad</a>
                         </label>
                     </div>
                     
                     <button type="submit" class="btn btn-light rounded-pill w-25 mb-4 poppins-semibold" style="color: #498094 !important;">Enviar</button>
                     
-                    <!-- {{-- mensaje de error --}}
-                    @if ($errors->any())
-                        <div class="alert alert-danger w-75">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    
-                    {{-- mensaje de éxito --}}
-                    @if (session('success'))
-                        <div class="alert alert-success w-75">
-                            {{ session('success') }}
-                        </div>
-                    @endif -->
                 </form>
             </div>
         </section>
     </main>
 
-    <footer class="d-flex flex-column justify-content-center align-items-center my-auto" style="background-color: #EBE9E9 !important;">
-        <section class="w-75 d-flex flex-row justify-content-between align-items-start mx-auto">
-            <article class="w-50 mx-auto my-5">
-                <h6 class="mb-3"><i class="fa-solid fa-scale-balanced me-2" style="color: #498094 !important;"></i>Asuntos legales</h6>
+    <footer class="d-flex flex-column justify-content-center align-items-center my-auto"
+        style="background-color: #EBE9E9 !important;">
+        <section class="w-75 d-flex flex-row flex-column flex-md-row justify-content-between align-items-start mx-auto mt-5">
+            <article class="w-100 w-md-50 mx-auto my-5 mt-md-5 mb-md-5 mt-5 mb-0">
+                <h6 class="poppins-light mb-3"><i class="fa-solid fa-scale-balanced me-2"
+                        style="color: #498094 !important;"></i>Asuntos legales</h6>
                 <ul>
-                    <li class="poppins-thin mb-2"><a href="tyc.html" class="" style="color: black;">Términos y condiciones</a></li>
-                    <li class="poppins-thin mb-2"><a href="pp.html" class="" style="color: black;">Política de privacidad</a></li>
-                    <li class="poppins-thin mb-2"><a href="iuf.html" class="" style="color: black;">Información al usuario financiero</a></li>
-                    <li class="poppins-thin mb-2"><a href="pp-tcc.html" class="" style="color: black;">Préstamos personales: Tasas, cargos y comisiones</a></li>
-                    <li class="poppins-thin mb-2"><a href="ca.html" class="" style="color: black;">Contratos de adhesión - Ley 24.240</a></li>
-                    <li class="poppins-thin mb-2"><a href="dc.html" class="" style="color: black;">Defensa del consumidor</a></li>
-                    <li class="poppins-thin mb-2"><a href="dli.html" class="" style="color: black;">Datos legales e institucionales</a></li>
+                    <li class="poppins-light mb-2"><a href="tyc.html" class="" style="color: black;">Términos y
+                            condiciones</a></li>
+                    <li class="poppins-light mb-2"><a href="pp.html" class="" style="color: black;">Política de
+                            privacidad</a></li>
+                    <li class="poppins-light mb-2"><a href="iuf.html" class="" style="color: black;">Información al
+                            usuario financiero</a></li>
+                    <li class="poppins-light mb-2"><a href="pp-tcc.html" class="" style="color: black;">Préstamos
+                            personales: Tasas, cargos y comisiones</a></li>
+                    <li class="poppins-light mb-2"><a href="ca.html" class="" style="color: black;">Contratos de adhesión
+                            - Ley 24.240</a></li>
+                    <li class="poppins-light mb-2"><a href="dc.html" class="" style="color: black;">Defensa del
+                            consumidor</a></li>
+                    <li class="poppins-light mb-2"><a href="dli.html" class="" style="color: black;">Datos legales e
+                            institucionales</a></li>
                 </ul>
-                <div class="d-flex flex-row justify-content-between align-items-end">
+            </article>
+            <article class="w-100 w-md-50 d-flex flex-column mx-auto my-5">
+                <h6 class="poppins-light mb-3"><i class="fa-solid fa-share-nodes me-2" style="color: #498094 !important;"></i>
+                    Nuestras redes</h6>
+                <ul class="w-25 d-flex flex-row justify-content-start align-items-center list-unstyled">
+                    <li class="me-0"><a href="https://www.instagram.com/glofinanzas/" target="_blank"
+                            rel="noopener noreferrer"><img src="images/footer/instagram.png" alt="Instagram"
+                                class="w-50"></a></li>
+                    <li class="me-0"><a href="https://www.facebook.com/glofinanzas" target="_blank"
+                            rel="noopener noreferrer"><img src="images/footer/facebook.png" alt="Facebook"
+                                class="w-50"></a></li>
+                </ul>
+                <a href="./arrepentimiento.html"
+                    class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2"
+                    style="color: #498094 !important;">Botón de arrepentimiento</a>
+                <a href="./baja.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2"
+                    style="color: #498094 !important;">Botón de baja</a>
+            </article>
+        </section>
+        <section class="w-75 d-flex flex-column justify-content-start align-items-start mx-auto mb-5">
+            <p class="poppins-light text-justify">GLOBAL CAPITAL MANAGEMENT SA se encuentra registrada ante el Banco
+                Central de la República Argentina como “Otros Proveedores no Financieros de Crédito” bajo el N° de
+                registro 55288. Inscripción RPC Nº 181 T 97 Fº 4059. IGPJ Res. Nº 1189.</p>
+
+            <p class="poppins-light text-justify">
+                (*)El otorgamiento del préstamo está sujeto a evaluación crediticia. Tipo de Amortización Francés con
+                cuotas mensuales y consecutivas. Tasa Fija. Ejemplo estimado: Monto desembolsado: $10.000 en 12 meses,
+                Cuota $2750 Total a pagar: $33.000 (IVA incluido). Cálculo de TNA 190.08% (sin IVA), CFTNA 230% (IVA
+                incluido), CFTEA 720.08% (IVA Incluido) y TEA 484.70% (sin IVA). TNA Mínima: 170,58% TNA Máxima:
+                581,96%. Este ejemplo no constituye una obligación de Global Capital Management S.A. de ofrecer el
+                precio y el costo que se informa ya que la TNA, la TEA y el CFT varían según el perfil crediticio del
+                solicitante del préstamo y el plazo de financiación elegido. El monto mínimo de financiación es de
+                $30.000 y el monto máximo de $3.000000. El período mínimo para la devolución de un préstamo es de 1 mes
+                y el máximo 36 meses. La aprobación definitiva del préstamo quedará condicionada al cumplimiento de las
+                condiciones exigidas por Global Capital Management SA.
+            </p>
+
+            <p class="poppins-bold text-justify">
+                *CFTEA: 720,08%
+            </p>
+
+            <p class="poppins-light text-justify">
+                (*)IVA incluido CFTEA: 484,70% (sin IVA). TNA 190,08% (sin IVA) TEA 484,70% (sin IVA)
+            </p>
+
+            <p class="poppins-light text-justify">
+                (*) Todos los préstamos son a tasa fija, en pesos y otorgados bajo el sistema de amortización francés
+                con cuotas mensuales y consecutivas. En todos los casos, la Tasa Nominal Anual (TNA), la Tasa Efectiva
+                Anual (TEA) y el Costo Financiero Total (CFT) a tasa Efectiva anual (CFTEA) aplicables serán informados
+                antes de la aceptación de la oferta de préstamo por parte del solicitante. La expresión del Costo
+                financiero total (Efectivo Anual) responde a una exigencia normativa y su cálculo refleja una operación
+                meramente teórica en la que se capitalizan mensualmente intereses. Global Capital Management S.A. en
+                ningún caso capitaliza intereses y utiliza el método del interés simple en todos sus cálculos. Los
+                Costos financieros totales informados corresponden al cálculo sobre un período mensual promedio de 30
+                días.
+            </p>
+
+            <section class="d-flex flex-row justify-content-between align-items-start mt-3">
+                <div class="w-50 d-flex flex-row justify-content-between align-items-end">
                     <a href="https://www.mpf.gob.ar/aaip/" target="_blank" rel="noopener noreferrer">
-                        <img src="images/footer/aaip.png" alt="AAIP" class="w-75 ms-4">
+                        <img src="images/footer/aaip.png" alt="AAIP" class="w-75 me-4">
                     </a>
-                    <a href="https://servicioscf.afip.gob.ar/publico/denuncias/denunciaCD.aspx" target="_blank" rel="noopener noreferrer">
-                        <img src="images/footer/data-fiscal.png" alt="Data Fiscal" class="w-75 ms-4">
+                    <a href="https://servicioscf.afip.gob.ar/publico/denuncias/denunciaCD.aspx" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="images/footer/data-fiscal.png" alt="Data Fiscal" class="w-75 me-4">
                     </a>
-                    <a href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank" rel="noopener noreferrer">
-                        <img src="images/footer/usuarios-financieros.png" alt="Usuarios Financieros" class="w-75 ms-4">
+                    <a href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="images/footer/usuarios-financieros.png" alt="Usuarios Financieros" class="w-75 me-4">
                     </a>
                 </div>
-            </article>
-            <article class="w-50 d-flex flex-column mx-auto my-5">
-                <h6 class="mb-3"><i class="fa-solid fa-share-nodes me-2" style="color: #498094 !important;"></i> Nuestras redes</h6>
-                <ul class="w-25 d-flex flex-row justify-content-start align-items-center list-unstyled">
-                    <li class="me-0"><a href="https://www.instagram.com/glofinanzas/" target="_blank" rel="noopener noreferrer"><img src="images/footer/instagram.png" alt="Instagram" class="w-50"></a></li>
-                    <li class="me-0"><a href="https://www.facebook.com/glofinanzas" target="_blank" rel="noopener noreferrer"><img src="images/footer/facebook.png" alt="Facebook" class="w-50"></a></li>
-                </ul>
-                <a href="./arrepentimiento.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de arrepentimiento</a>
-                <a href="./baja.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de baja</a>
-            </article>
+            </section>
         </section>
         <script src="js/carrusel.js"></script>
         <script src="js/whatsapp.js"></script>
-        <script>
-            const menuToggle = document.getElementById('menuToggle');
-            const barsIcon = menuToggle.querySelector('.fa-bars');
-            const xmarkIcon = menuToggle.querySelector('.fa-xmark');
-            const main = document.querySelector('main');
-            const footer = document.querySelector('footer');
-            const menuBox = document.querySelector('.menu-box');
-            const btnServicios = document.getElementById('btn-servicios');
-
-            menuToggle.addEventListener('click', () => {
-                barsIcon.classList.toggle('d-none');
-                xmarkIcon.classList.toggle('d-none');
-                if (menuBox.classList.contains('d-none')) {
-                    menuBox.classList.remove('d-none');
-                    main.classList.add('d-none');
-                    footer.classList.add('d-none');
-                } else {
-                    menuBox.classList.add('d-none');
-                    main.classList.remove('d-none');
-                    footer.classList.remove('d-none');
-                }
-            });
-
-            btnServicios.addEventListener('click', () => {
-                menuBox.classList.add('d-none');
-                main.classList.remove('d-none');
-                footer.classList.remove('d-none');
-            });
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                window.scrollTo(0, 1);
-            });
-        </script>
+        <script src="js/toggle.menu.js"></script>
+        <script src="js/images.animation.js"></script>
     </footer>
 </body>
 </html>
