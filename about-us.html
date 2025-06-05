@@ -26,13 +26,66 @@
 </head>
 
 <body>
-    <style type="text/css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            overflow: hidden;
+        }
+
+        body {
+            overflow: auto;
+            scrollbar-width: none;       /* Firefox */
+            -ms-overflow-style: none;    /* IE y Edge antiguos */
+        }
+
+        body::-webkit-scrollbar {
+            display: none;               /* Chrome, Safari, Opera */
+        }
+
+
+        .snap-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+        .snap-slide {
+            scroll-snap-align: start;
+            width: 100vw;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .normal-slide {
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        h2 {
+            position: fixed !important;
+            top: calc(42% - 8rem) !important;
+            left: calc(50% - 30rem - 5rem) !important;
+            color: white !important;
+            font-size: 30rem !important;
+            font-family: 'Helvetica Bold', sans-serif !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            z-index: 0 !important;
+            user-select: none;
+            pointer-events: none;
+        }
+
         header a i {
             font-size: 1.75rem;
         }
 
         .menu p {
-            font-size: 1.25rem;
+            font-size: 14pt;
         }
 
         .menu-box ul li,
@@ -45,58 +98,13 @@
         .menu-box ul li a:hover {
             transition: all 0.3s ease;
             transform: scale(1.1);
-            font-weight: 700;
-        }
-
-        @font-face {
-            font-family: 'Helvetica Bold';
-            src: url('fonts/helvetica/Helvetica-Bold.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        h2 {
-            position: fixed !important;
-            top: calc(42% - 15rem) !important;
-            left: 9% !important;
-            color: white !important;
-            font-size: 30rem !important;
-            font-family: 'Helvetica Bold', sans-serif !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            z-index: 1 !important;
-            user-select: none;
-            pointer-events: none;
-        }
-
-        section:nth-child(1),
-        section:nth-child(2),
-        section:nth-child(3),
-        section:nth-child(4),
-        section:nth-child(5) {
-            scroll-snap-align: start;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            height: 100vh;
-        }
-
-        .section-snap {
-            scroll-snap-type: y mandatory;
-            overflow-y: auto;
-            height: 100vh;
-        }
-
-        .element-snap {
-            scroll-snap-align: start;
+            font-weight: 900;
         }
     </style>
-
-    <header class="w-100 px-5 py-3 d-flex flex-row justify-content-between align-items-center position-fixed"
-        style="z-index: 999; top: 0; background-color: transparent;">
+    <header class="bg-light w-100 w-sm-75 px-4 py-3 d-flex flex-row justify-content-between align-items-center"
+        style="z-index: 10;">
         <a href="index.html" class="d-flex flex-row align-items-center text-decoration-none">
-            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 150px;" />
+            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 135px;" />
         </a>
         <button id="menuToggle"
             class="menu d-flex flex-row align-items-center text-decoration-none text-black bg-transparent border-0">
@@ -105,11 +113,6 @@
             <i class="fa-solid fa-xmark d-none"></i>
         </button>
     </header>
-
-    <a href="https://api.whatsapp.com/send?phone=5491132965937&text=Hola%20quiero%20más%20información."
-        class="whatsapp-button" id="whatsappBtn" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
 
     <!-- menu box -->
     <section class="fullscreen menu-box d-flex flex-column justify-content-center align-items-center d-none">
@@ -134,28 +137,27 @@
         </ul>
     </section>
 
-    <main class="">
-        <h2>GL</h2>
-        <section class="section-snap">
-            <section class="element-snap fullscreen d-flex justify-content-center align-items-center"
-                style="background-image: url('images/about/glo1.png');">
-            </section>
-            <section class="element-snap fullscreen d-flex justify-content-center align-items-center"
-                style="background-image: url('images/about/glo2.png');">
-            </section>
-            <section class="element-snap fullscreen d-flex justify-content-center align-items-center"
-                style="background-image: url('images/about/glo3.png');">
-            </section>
-            <section class="element-snap fullscreen d-flex justify-content-center align-items-center"
-                style="background-image: url('images/about/glo4.png');">
-            </section>
-            <section class="element-snap fullscreen bg-light" style="z-index: 10;">
-                <!-- Fondo dividido en dos columnas -->
-                <div class="w-100 d-flex flex-row top-0 start-0 h-100">
-                    <article class="w-50 mx-3 d-flex flex-column justify-content-center align-items-center">
+    <a href="https://api.whatsapp.com/send?phone=5491132965937&text=Hola%20quiero%20más%20información."
+        class="whatsapp-button" id="whatsappBtn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <h2>GL</h2>
+
+    <!-- Sección con scroll-snap -->
+    <div class="snap-container">
+        <div class="snap-slide d-flex justify-content-center align-items-center" style="background-image: url('images/about/glo1.png'); "></div>
+        <div class="snap-slide d-flex justify-content-center align-items-center" style="background-image: url('images/about/glo2.png'); "></div>
+        <div class="snap-slide d-flex justify-content-center align-items-center" style="background-image: url('images/about/glo3.png'); "></div>
+        <div class="snap-slide d-flex justify-content-center align-items-center" style="background-image: url('images/about/glo4.png'); "></div>
+        <!-- Sección con scroll normal -->
+        <div class="snap-slide" style="position: relative !important; z-index: 1 !important;">
+            <div class="normal-slide">
+                <div class="w-100 d-flex flex-row top-0 start-0 h-100" style="background-color: #F5F5F5 !important;">
+                    <article class="w-50 mx-auto d-flex flex-column justify-content-center align-items-center" style="max-width: 600px;">
                         <h1 class="poppins-semibold mx-5 my-5" style="color: #498094;">Tu tranquilidad financiera,
                             nuestra prioridad.</h1>
-                        <p class="bg-white poppins-regular mx-5 p-5">
+                        <p class="bg-white poppins-regular mx-5 p-5 rounded-4">
                             <strong>Global Capital Management</strong> es una compañia argentina de inversiones y
                             servicios de financiación en línea con gran proyección en América Latina. Brinda
                             <strong>soluciones eficientes y estratégicas</strong> a sus clientes, tanto físicas como
@@ -164,37 +166,33 @@
                     </article>
                     <img src="images/about/glo5.png" alt="" style="width: 50%; height: 100vh; object-fit: cover;" />
                 </div>
-                <footer class="h-50 d-flex flex-column justify-content-center align-items-center my-auto"
-                    style="background-color: #EBE9E9 !important; z-index: 10 !important; position: relative;">
-                    <section class="w-75 d-flex flex-row justify-content-between align-items-start mx-auto">
-                        <article class="w-50 mx-auto my-5">
-                            <h6 class="mb-3"><i class="fa-solid fa-scale-balanced me-2"
+            </div>
+            <div class="normal-slide">
+                <footer class="d-flex flex-column justify-content-center align-items-center my-auto"
+                    style="background-color: #EBE9E9 !important; padding-bottom: 6rem !important;">
+                    <section class="w-75 d-flex flex-row flex-column flex-md-row justify-content-between align-items-start mx-auto mt-5">
+                        <article class="w-100 w-md-50 mx-auto my-5 mt-md-5 mb-md-5 mt-5 mb-0">
+                            <h6 class="poppins-light mb-3"><i class="fa-solid fa-scale-balanced me-2"
                                     style="color: #498094 !important;"></i>Asuntos legales</h6>
                             <ul>
-                    <li class="poppins-thin mb-2"><a href="tyc.html" class="" style="color: black;">Términos y condiciones</a></li>
-                    <li class="poppins-thin mb-2"><a href="pp.html" class="" style="color: black;">Política de privacidad</a></li>
-                    <li class="poppins-thin mb-2"><a href="iuf.html" class="" style="color: black;">Información al usuario financiero</a></li>
-                    <li class="poppins-thin mb-2"><a href="pp-tcc.html" class="" style="color: black;">Préstamos personales: Tasas, cargos y comisiones</a></li>
-                    <li class="poppins-thin mb-2"><a href="ca.html" class="" style="color: black;">Contratos de adhesión - Ley 24.240</a></li>
-                    <li class="poppins-thin mb-2"><a href="dc.html" class="" style="color: black;">Defensa del consumidor</a></li>
-                    <li class="poppins-thin mb-2"><a href="dli.html" class="" style="color: black;">Datos legales e institucionales</a></li>
-                </ul>
-                            <div class="d-flex flex-row justify-content-between align-items-end">
-                                <a href="https://www.mpf.gob.ar/aaip/" target="_blank" rel="noopener noreferrer">
-                                    <img src="images/footer/aaip.png" alt="AAIP" class="w-75 ms-4">
-                                </a>
-                                <a href="https://servicioscf.afip.gob.ar/publico/denuncias/denunciaCD.aspx" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <img src="images/footer/data-fiscal.png" alt="Data Fiscal" class="w-75 ms-4">
-                                </a>
-                                <a href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <img src="images/footer/usuarios-financieros.png" alt="Usuarios Financieros" class="w-75 ms-4">
-                                </a>
-                            </div>
+                                <li class="poppins-light mb-2"><a href="tyc.html" class="" style="color: black;">Términos y
+                                        condiciones</a></li>
+                                <li class="poppins-light mb-2"><a href="pp.html" class="" style="color: black;">Política de
+                                        privacidad</a></li>
+                                <li class="poppins-light mb-2"><a href="iuf.html" class="" style="color: black;">Información al
+                                        usuario financiero</a></li>
+                                <li class="poppins-light mb-2"><a href="pp-tcc.html" class="" style="color: black;">Préstamos
+                                        personales: Tasas, cargos y comisiones</a></li>
+                                <li class="poppins-light mb-2"><a href="ca.html" class="" style="color: black;">Contratos de adhesión
+                                        - Ley 24.240</a></li>
+                                <li class="poppins-light mb-2"><a href="dc.html" class="" style="color: black;">Defensa del
+                                        consumidor</a></li>
+                                <li class="poppins-light mb-2"><a href="dli.html" class="" style="color: black;">Datos legales e
+                                        institucionales</a></li>
+                            </ul>
                         </article>
-                        <article class="w-50 d-flex flex-column mx-auto my-5">
-                            <h6 class="mb-3"><i class="fa-solid fa-share-nodes me-2" style="color: #498094 !important;"></i>
+                        <article class="w-100 w-md-50 d-flex flex-column mx-auto my-5">
+                            <h6 class="poppins-light mb-3"><i class="fa-solid fa-share-nodes me-2" style="color: #498094 !important;"></i>
                                 Nuestras redes</h6>
                             <ul class="w-25 d-flex flex-row justify-content-start align-items-center list-unstyled">
                                 <li class="me-0"><a href="https://www.instagram.com/glofinanzas/" target="_blank"
@@ -204,45 +202,76 @@
                                         rel="noopener noreferrer"><img src="images/footer/facebook.png" alt="Facebook"
                                             class="w-50"></a></li>
                             </ul>
-                            <a href="./arrepentimiento.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de arrepentimiento</a>
-                <a href="./baja.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2" style="color: #498094 !important;">Botón de baja</a>
+                            <a href="./arrepentimiento.html"
+                                class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2"
+                                style="color: #498094 !important;">Botón de arrepentimiento</a>
+                            <a href="./baja.html" class="w-75 btn border border-0 rounded-pill bg-white poppins-semibold mb-3 py-2"
+                                style="color: #498094 !important;">Botón de baja</a>
                         </article>
+                    </section>
+                    <section class="w-75 d-flex flex-column justify-content-start align-items-start mx-auto mb-5">
+                        <p class="poppins-light text-justify">GLOBAL CAPITAL MANAGEMENT SA se encuentra registrada ante el Banco
+                            Central de la República Argentina como “Otros Proveedores no Financieros de Crédito” bajo el N° de
+                            registro 55288. Inscripción RPC Nº 181 T 97 Fº 4059. IGPJ Res. Nº 1189.</p>
+
+                        <p class="poppins-light text-justify">
+                            (*)El otorgamiento del préstamo está sujeto a evaluación crediticia. Tipo de Amortización Francés con
+                            cuotas mensuales y consecutivas. Tasa Fija. Ejemplo estimado: Monto desembolsado: $10.000 en 12 meses,
+                            Cuota $2750 Total a pagar: $33.000 (IVA incluido). Cálculo de TNA 190.08% (sin IVA), CFTNA 230% (IVA
+                            incluido), CFTEA 720.08% (IVA Incluido) y TEA 484.70% (sin IVA). TNA Mínima: 170,58% TNA Máxima:
+                            581,96%. Este ejemplo no constituye una obligación de Global Capital Management S.A. de ofrecer el
+                            precio y el costo que se informa ya que la TNA, la TEA y el CFT varían según el perfil crediticio del
+                            solicitante del préstamo y el plazo de financiación elegido. El monto mínimo de financiación es de
+                            $30.000 y el monto máximo de $3.000000. El período mínimo para la devolución de un préstamo es de 1 mes
+                            y el máximo 36 meses. La aprobación definitiva del préstamo quedará condicionada al cumplimiento de las
+                            condiciones exigidas por Global Capital Management SA.
+                        </p>
+
+                        <p class="poppins-bold text-justify">
+                            *CFTEA: 720,08%
+                        </p>
+
+                        <p class="poppins-light text-justify">
+                            (*)IVA incluido CFTEA: 484,70% (sin IVA). TNA 190,08% (sin IVA) TEA 484,70% (sin IVA)
+                        </p>
+
+                        <p class="poppins-light text-justify">
+                            (*) Todos los préstamos son a tasa fija, en pesos y otorgados bajo el sistema de amortización francés
+                            con cuotas mensuales y consecutivas. En todos los casos, la Tasa Nominal Anual (TNA), la Tasa Efectiva
+                            Anual (TEA) y el Costo Financiero Total (CFT) a tasa Efectiva anual (CFTEA) aplicables serán informados
+                            antes de la aceptación de la oferta de préstamo por parte del solicitante. La expresión del Costo
+                            financiero total (Efectivo Anual) responde a una exigencia normativa y su cálculo refleja una operación
+                            meramente teórica en la que se capitalizan mensualmente intereses. Global Capital Management S.A. en
+                            ningún caso capitaliza intereses y utiliza el método del interés simple en todos sus cálculos. Los
+                            Costos financieros totales informados corresponden al cálculo sobre un período mensual promedio de 30
+                            días.
+                        </p>
+
+                        <section class="d-flex flex-row justify-content-between align-items-start mt-3">
+                            <div class="w-50 d-flex flex-row justify-content-between align-items-end">
+                                <a href="https://www.mpf.gob.ar/aaip/" target="_blank" rel="noopener noreferrer">
+                                    <img src="images/footer/aaip.png" alt="AAIP" class="w-75 me-4">
+                                </a>
+                                <a href="https://servicioscf.afip.gob.ar/publico/denuncias/denunciaCD.aspx" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src="images/footer/data-fiscal.png" alt="Data Fiscal" class="w-75 me-4">
+                                </a>
+                                <a href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src="images/footer/usuarios-financieros.png" alt="Usuarios Financieros" class="w-75 me-4">
+                                </a>
+                            </div>
+                        </section>
                     </section>
                     <script src="js/carrusel.js"></script>
                     <script src="js/whatsapp.js"></script>
-                    <script>
-                        const menuToggle = document.getElementById('menuToggle');
-                        const barsIcon = menuToggle.querySelector('.fa-bars');
-                        const xmarkIcon = menuToggle.querySelector('.fa-xmark');
-                        const main = document.querySelector('main');
-                        const footer = document.querySelector('footer');
-                        const menuBox = document.querySelector('.menu-box');
-                        const btnServicios = document.getElementById('btn-servicios');
-
-                        menuToggle.addEventListener('click', () => {
-                            barsIcon.classList.toggle('d-none');
-                            xmarkIcon.classList.toggle('d-none');
-                            if (menuBox.classList.contains('d-none')) {
-                                menuBox.classList.remove('d-none');
-                                main.classList.add('d-none');
-                                footer.classList.add('d-none');
-                            } else {
-                                menuBox.classList.add('d-none');
-                                main.classList.remove('d-none');
-                                footer.classList.remove('d-none');
-                            }
-                        });
-
-                        btnServicios.addEventListener('click', () => {
-                            menuBox.classList.add('d-none');
-                            main.classList.remove('d-none');
-                            footer.classList.remove('d-none');
-                        });
-                    </script>
+                    <script src="js/toggle.menu.js"></script>
                 </footer>
-            </section>
-        </section>
-    </main>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
