@@ -79,27 +79,6 @@
             user-select: none;
             pointer-events: none;
         }
-
-        header a i {
-            font-size: 1.75rem;
-        }
-
-        .menu p {
-            font-size: 14pt;
-        }
-
-        .menu-box ul li,
-        .menu-box ul li a {
-            font-size: 4rem !important;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .menu-box ul li:hover,
-        .menu-box ul li a:hover {
-            transition: all 0.3s ease;
-            transform: scale(1.1);
-            font-weight: 900;
-        }
     </style>
     <header class="bg-light w-100 w-sm-75 px-4 py-3 d-flex flex-row justify-content-between align-items-center"
         style="z-index: 10;">
@@ -142,10 +121,10 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <h2>GL</h2>
+    <h2 class="gl">GL</h2>
 
     <!-- Sección con scroll-snap -->
-    <div class="snap-container">
+    <main class="snap-container">
         <div class="snap-slide d-flex justify-content-center align-items-center" style="background-image: url('images/about/glo1.png'); "></div>
         <div class="snap-slide d-flex justify-content-center align-items-center" style="background-image: url('images/about/glo2.png'); "></div>
         <div class="snap-slide d-flex justify-content-center align-items-center" style="background-image: url('images/about/glo3.png'); "></div>
@@ -263,13 +242,12 @@
                             </div>
                         </section>
                     </section>
-                    <script src="js/carrusel.js"></script>
                     <script src="js/whatsapp.js"></script>
                     <script src="js/toggle.menu.js"></script>
                 </footer>
             </div>
         </div>
-    </div>
+    </main>
 
 
 </body>

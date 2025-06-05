@@ -6,6 +6,10 @@ const footer = document.querySelector("footer");
 const menuBox = document.querySelector(".menu-box");
 const btnServicios = document.getElementById("btn-servicios");
 
+const gl = document.querySelector(".gl");
+console.log(gl);
+
+
 menuToggle.addEventListener("click", () => {
     barsIcon.classList.toggle("d-none");
     xmarkIcon.classList.toggle("d-none");
@@ -13,10 +17,12 @@ menuToggle.addEventListener("click", () => {
         menuBox.classList.remove("d-none");
         main.classList.add("d-none");
         footer.classList.add("d-none");
+        gl.classList.add("d-none");
     } else {
         menuBox.classList.add("d-none");
         main.classList.remove("d-none");
         footer.classList.remove("d-none");
+        gl.classList.remove("d-none");
     }
 });
 
@@ -24,6 +30,7 @@ btnServicios.addEventListener("click", () => {
     menuBox.classList.add("d-none");
     main.classList.remove("d-none");
     footer.classList.remove("d-none");
+    gl.classList.remove("d-none");
     barsIcon.classList.toggle("d-none");
     xmarkIcon.classList.toggle("d-none");
 });
