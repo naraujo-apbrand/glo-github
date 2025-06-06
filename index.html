@@ -41,12 +41,6 @@
             overflow: hidden;
             z-index: -1;
         }
-
-        .scaled-text {
-            white-space: nowrap;
-            display: inline-block;
-            transform-origin: center;
-        }
     </style>
     <header class="d-flex justify-content-between align-items-center w-100 px-5 position-fixed"
         style="height: 120px; background-color: #498094 !important; z-index: 1000 !important;">
@@ -58,7 +52,7 @@
             <a href="#servicios" class="menu text-white text-decoration-none">
                 <p class="poppins-regular my-0 me-4 py-0">TU CRÉDITO</p>
             </a>
-            <a href="https://gcm.itsflow.its.com.ar/login" class="menu text-white text-decoration-none">
+            <a href="https://gcm.itsflow.its.com.ar/login" target="_blank" class="menu text-white text-decoration-none">
                 <p class="poppins-regular my-0 me-4 py-0">INGRESAR</p>
             </a>
             <button id="menuToggle"
@@ -103,48 +97,17 @@
         <div class="auto-scroll d-flex justify-content-center align-items-center"></div>
 
         <section class="threequarterscreen w-75 d-flex flex-row justify-content-center align-items-center mx-auto">
-            <div class="w-50 h-auto d-flex flex-column justify-content-center align-items-center ms-auto me-5">
-                <h1 class="poppins-regular text-center my-2" style="color: #15182E; font-size: 14pt !important;">Bienvenidos a <span class="poppins-semibold">Global Capital Management</span></h1>
-                <h2 class="scaled-text poppins-medium text-center mt-2" style="color: #5CA4BE; font-size: 28pt;">Tu tranquilidad financiera,</h2>
-                <h3 class="scaled-text poppins-black text-uppercase text-center mb-4" style="color: #5CA4BE; font-size: 37pt;">nuestra prioridad.</h3>
-                <p class="poppins-regular my-4" style="color: #15182E; font-size: 14pt;">Una compañia argentina de inversiones y
-                    servicios de financiación en línea con gran proyección en América Latina. Brinda soluciones
-                    eficientes y estratégicas a sus clientes, tanto físicas como jurídicas.</p>
+            <div class="w-50 h-auto d-flex flex-column justify-content-center align-items-start ms-auto me-5">
+                <h1 class="poppins-regular my-2" style="color: #15182E; font-size: 14pt !important;">Bienvenidos a <span class="poppins-semibold">Global Capital Management</span></h1>
+                <h2 class="poppins-medium mt-2" style="color: #5CA4BE; font-size: 28pt;">Tu tranquilidad financiera,</h2>
+                <h3 class="poppins-black text-uppercase mb-4" style="color: #5CA4BE; font-size: 37pt;">nuestra prioridad.</h3>
+                <p class="poppins-regular my-4" style="color: #15182E; font-size: 14pt;">La fuerza de la tecnología y la ciencia transforma la financiación en línea, haciéndola más eficiente y efectiva, llevando oportunidades globales al bienestar cotidiano.</p>
             </div>
             <div class="w-50 h-auto rounded-5 ms-5 me-auto">
                 <img src="images/about/glo5.png" alt="Imagen de Global Capital Management"
                     class="img-fluid h-50 w-100 rounded-5" style="object-fit: contain;">
             </div>
         </section>
-
-        <script>
-            function scaleTextToAvailableWidth(textEl) {
-                const container = textEl.parentElement;
-
-                const availableWidth = container.offsetWidth;
-
-                textEl.style.transform = 'scale(1)'; // Resetear escala previa
-                const textWidth = textEl.offsetWidth;
-
-                if (textWidth === 0) return;
-
-                const scale = availableWidth / textWidth;
-
-                textEl.style.transform = `scale(${scale})`;
-            }
-
-            function resize() {
-                const textEls = document.querySelectorAll('.scaled-text');
-                textEls.forEach(el => {
-                if (el.nodeType === Node.ELEMENT_NODE) {
-                    scaleTextToAvailableWidth(el);
-                }
-                });
-            }
-
-            window.addEventListener('load', resize);
-            window.addEventListener('resize', resize);
-        </script>
 
         <section class="quarterscreen d-flex flex-column justify-content-center align-items-center">
             <div class="w-100 d-flex flex-column justify-content-center align-items-center mx-auto">
@@ -159,7 +122,7 @@
                     <!-- Texto fijo, sin animación -->
                     <div class="col-4 bg-white px-5 rounded-5 d-flex flex-column justify-content-center"
                         style="height: 50vh;">
-                        <p class="poppins-regular mx-auto my-0 poppins-regular text-justify" style="color: #15182E;">
+                        <p class="poppins-regular mx-auto my-0 poppins-regular text-justify" style="color: #15182E; font-size: 14pt !important;">
                             Ofrecemos <span class="poppins-bold" style="color: #5CA4BE;">soluciones y servicios confiables</span> para la
                             satisfacción de nuestros clientes, actuando en equipo para desarrollar relaciones
                             perdurables y gestionar de forma eficiente todos los sectores, <span
