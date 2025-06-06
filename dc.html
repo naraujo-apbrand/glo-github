@@ -23,17 +23,26 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-    <header class="bg-light w-100 w-sm-75 px-4 py-3 d-flex flex-row justify-content-between align-items-center position-fixed position-sm-relative"
-        style="z-index: 10;">
+    <header class="d-flex justify-content-between align-items-center w-100 px-5 position-fixed"
+        style="height: 120px; background-color: #498094 !important; z-index: 1000 !important;">
         <a href="index.html" class="d-flex flex-row align-items-center text-decoration-none">
-            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 135px;" />
+            <img src="images/logo-blanco.svg" alt="Logo" class="logo"
+                style="max-height: calc(120px - 1rem) !important;" />
         </a>
-        <button id="menuToggle"
-            class="menu d-flex flex-row align-items-center text-decoration-none text-black bg-transparent border-0">
-            <p class="poppins-extralight my-0 mx-2 py-0">MENU</p>
-            <i class="fa-solid fa-bars"></i>
-            <i class="fa-solid fa-xmark d-none"></i>
-        </button>
+        <div class="d-flex flex-row align-items-center justify-content-end">
+            <a href="#servicios" class="menu text-white text-decoration-none">
+                <p class="poppins-regular my-0 me-4 py-0">TU CRÉDITO</p>
+            </a>
+            <a href="https://gcm.itsflow.its.com.ar/login" class="menu text-white text-decoration-none">
+                <p class="poppins-regular my-0 me-4 py-0">INGRESAR</p>
+            </a>
+            <button id="menuToggle"
+                class="menu d-flex flex-row align-items-center text-decoration-none text-white bg-transparent border-0">
+                <p class="poppins-regular my-0 mx-2 py-0">MENU</p>
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark d-none"></i>
+            </button>
+        </div>
     </header>
 
     <a href="https://api.whatsapp.com/send?phone=5491132965937&text=Hola%20quiero%20más%20información." class="whatsapp-button" id="whatsappBtn" target="_blank">
@@ -65,7 +74,7 @@
     <main class="w-75 min-vh-100 d-flex flex-column justify-content-start align-items-start mx-auto my-auto">
         <section class="w-100" style="height: 8rem !important;">
         </section>
-        <h1 class="poppins-semibold mt-5 mx-5" style="color: #498094 !important;">Defensa del Consumidor</h1>
+        <h1 class="poppins-semibold mt-5 mb-4 mx-5" style="color: #498094 !important;">Defensa del Consumidor</h1>
         <ul class="" style="list-style-type: disc; margin-left: 2rem !important;">
             <li class="poppins-regular mb-3" style="text-align: justify !important; line-height: 2rem;">
                 Podés hacer una denuncia en el Portal de Defensa de las y los Consumidores haciendo click <a href="https://autogestion.produccion.gob.ar/consumidores" target="_blank" rel="noopener noreferrer" class="text-black">acá</a>.
@@ -95,7 +104,7 @@
                             usuario financiero</a></li>
                     <li class="poppins-light mb-2"><a href="pp-tcc.html" class="" style="color: black;">Préstamos
                             personales: Tasas, cargos y comisiones</a></li>
-                    <li class="poppins-light mb-2"><a href="ca.html" class="" style="color: black;">Contratos de adhesión
+                    <li class="poppins-light mb-2"><a href="https://www.argentina.gob.ar/justicia/derechofacil/leysimple/defensa-del-consumidor" target="_blank" class="" style="color: black;">Contratos de adhesión
                             - Ley 24.240</a></li>
                     <li class="poppins-light mb-2"><a href="dc.html" class="" style="color: black;">Defensa del
                             consumidor</a></li>

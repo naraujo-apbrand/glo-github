@@ -72,7 +72,8 @@
             left: calc(50% - 30rem - 5rem) !important;
             color: white !important;
             font-size: 30rem !important;
-            font-family: 'Helvetica Bold', sans-serif !important;
+            font-family: Helvetica, sans-serif !important;
+            font-weight: 700 !important;
             margin: 0 !important;
             padding: 0 !important;
             z-index: 0 !important;
@@ -80,18 +81,31 @@
             pointer-events: none;
         }
     </style>
-    <header class="bg-light w-100 w-sm-75 px-4 py-3 d-flex flex-row justify-content-between align-items-center"
-        style="z-index: 10;">
+    <header class="d-flex justify-content-between align-items-center w-100 px-5 position-fixed"
+        style="height: 120px; background-color: #498094 !important; z-index: 1000 !important;">
         <a href="index.html" class="d-flex flex-row align-items-center text-decoration-none">
-            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 135px;" />
+            <img src="images/logo-blanco.svg" alt="Logo" class="logo"
+                style="max-height: calc(120px - 1rem) !important;" />
         </a>
-        <button id="menuToggle"
-            class="menu d-flex flex-row align-items-center text-decoration-none text-black bg-transparent border-0">
-            <p class="poppins-extralight my-0 mx-2 py-0">MENU</p>
-            <i class="fa-solid fa-bars"></i>
-            <i class="fa-solid fa-xmark d-none"></i>
-        </button>
+        <div class="d-flex flex-row align-items-center justify-content-end">
+            <a href="#servicios" class="menu text-white text-decoration-none">
+                <p class="poppins-regular my-0 me-4 py-0">TU CRÉDITO</p>
+            </a>
+            <a href="https://gcm.itsflow.its.com.ar/login" class="menu text-white text-decoration-none">
+                <p class="poppins-regular my-0 me-4 py-0">INGRESAR</p>
+            </a>
+            <button id="menuToggle"
+                class="menu d-flex flex-row align-items-center text-decoration-none text-white bg-transparent border-0">
+                <p class="poppins-regular my-0 mx-2 py-0">MENU</p>
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark d-none"></i>
+            </button>
+        </div>
     </header>
+
+    <a href="https://api.whatsapp.com/send?phone=5491132965937&text=Hola%20quiero%20más%20información." class="whatsapp-button" id="whatsappBtn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- menu box -->
     <section class="fullscreen menu-box d-flex flex-column justify-content-center align-items-center d-none">
@@ -110,16 +124,12 @@
                 <a href="./about-us.html" class="poppins-medium text-black text-decoration-none">Nosotros</a>
             </li>
             <li class="mb-3">
-                <a href="./index.html#servicios" class="poppins-medium text-black text-decoration-none"
-                    id="btn-servicios">Servicios</a>
+                <a href="./index.html#servicios" class="poppins-medium text-black text-decoration-none" id="btn-servicios">Servicios</a>
             </li>
         </ul>
     </section>
 
-    <a href="https://api.whatsapp.com/send?phone=5491132965937&text=Hola%20quiero%20más%20información."
-        class="whatsapp-button" id="whatsappBtn" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <section class="w-100" style="height: 120px !important;"></section>
 
     <h2 class="gl">GL</h2>
 
@@ -162,7 +172,7 @@
                                         usuario financiero</a></li>
                                 <li class="poppins-light mb-2"><a href="pp-tcc.html" class="" style="color: black;">Préstamos
                                         personales: Tasas, cargos y comisiones</a></li>
-                                <li class="poppins-light mb-2"><a href="ca.html" class="" style="color: black;">Contratos de adhesión
+                                <li class="poppins-light mb-2"><a href="https://www.argentina.gob.ar/justicia/derechofacil/leysimple/defensa-del-consumidor" target="_blank" class="" style="color: black;">Contratos de adhesión
                                         - Ley 24.240</a></li>
                                 <li class="poppins-light mb-2"><a href="dc.html" class="" style="color: black;">Defensa del
                                         consumidor</a></li>
@@ -242,9 +252,13 @@
                             </div>
                         </section>
                     </section>
+                    <script src="js/carrusel.js"></script>
                     <script src="js/whatsapp.js"></script>
                     <script src="js/toggle.menu.js"></script>
+                    <script src="js/images.animation.js"></script>
                 </footer>
+            </body>
+            </html>
             </div>
         </div>
     </main>
