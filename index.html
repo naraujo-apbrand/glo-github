@@ -26,17 +26,42 @@
 </head>
 
 <body class="bg-light">
-    <header class="bg-light w-100 w-sm-75 px-4 py-3 d-flex flex-row justify-content-between align-items-center position-fixed position-sm-relative"
-        style="z-index: 10;">
+    <style type="text/css">
+        .auto-scroll {
+            width: 100vw;
+            height: calc(100vh - 120px) !important;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            z-index: -1;
+        }
+    </style>
+    <header class="d-flex justify-content-between align-items-center w-100 px-5 position-fixed"
+        style="height: 120px; background-color: #498094 !important; z-index: 1000 !important;">
         <a href="index.html" class="d-flex flex-row align-items-center text-decoration-none">
-            <img src="images/logo.svg" alt="Logo" class="logo" style="max-width: 135px;" />
+            <img src="images/logo-blanco.svg" alt="Logo" class="logo"
+                style="max-height: calc(120px - 1rem) !important;" />
         </a>
-        <button id="menuToggle"
-            class="menu d-flex flex-row align-items-center text-decoration-none text-black bg-transparent border-0">
-            <p class="poppins-extralight my-0 mx-2 py-0">MENU</p>
-            <i class="fa-solid fa-bars"></i>
-            <i class="fa-solid fa-xmark d-none"></i>
-        </button>
+        <div class="d-flex flex-row align-items-center justify-content-end">
+            <a href="#servicios" class="menu text-white text-decoration-none">
+                <p class="poppins-regular my-0 me-4 py-0">TU CRÉDITO</p>
+            </a>
+            <a href="https://gcm.itsflow.its.com.ar/login" class="menu text-white text-decoration-none">
+                <p class="poppins-regular my-0 me-4 py-0">INGRESAR</p>
+            </a>
+            <button id="menuToggle"
+                class="menu d-flex flex-row align-items-center text-decoration-none text-white bg-transparent border-0">
+                <p class="poppins-regular my-0 mx-2 py-0">MENU</p>
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark d-none"></i>
+            </button>
+        </div>
     </header>
 
     <a href="https://api.whatsapp.com/send?phone=5491132965937&text=Hola%20quiero%20más%20información."
@@ -68,41 +93,64 @@
     </section>
 
     <main class="">
-        <section class="fullscreen d-flex flex-column justify-content-center align-items-center">
-            <video autoplay muted loop class="bg-video" preload="metadata" poster="images/home/poster.jpg">
-                <source src="videos/intro-optimized.mp4" type="video/mp4" />
-                Tu navegador no soporta el video.
-            </video>
-            <div class="w-75 overlay">
-                <h1 class="poppins-medium text-white text-center my-2" style="font-size: 28pt;">Tu tranquilidad financiera,</h1>
-                <h2 class="poppins-black text-uppercase text-white text-center my-2" style="font-size: 37pt;">nuestra prioridad.</h2>
-                <p class="w-75 poppins-regular text-white text-center my-5 mx-auto" style="font-size: 14pt;">Una compañia argentina de inversiones y servicios
-                    de financiación en línea con gran proyección en América Latina. Brinda soluciones eficientes y
-                    estratégicas a sus clientes, tanto físicas como jurídicas.</p>
+        <div class="" style="height: 120px !important;"></div>
+        <div class="auto-scroll d-flex justify-content-center align-items-center"></div>
+
+        <section class="threequarterscreen w-75 d-flex flex-row justify-content-center align-items-center mx-auto">
+            <div class="w-50 h-auto d-flex flex-column justify-content-center align-items-center ms-auto me-3">
+                <h1 class="poppins-regular text-center my-2" style="color: #15182E; font-size: 14pt !important;">Bienvenidos a <span class="poppins-semibold">Global Capital Management</span></h1>
+                <h2 class="poppins-medium text-center mt-2" style="color: #5CA4BE; font-size: 28pt; white-space: nowrap; display: inline-block; transform-origin: center;">Tu tranquilidad financiera,</h1>
+                <h3 id="text" class="poppins-black text-uppercase text-center mb-4" style="color: #5CA4BE; font-size: 37pt; white-space: nowrap; display: inline-block; transform-origin: center;">nuestra prioridad.</h2>
+                <p id="text" class="poppins-regular my-4" style="color: #15182E; font-size: 14pt;">Una compañia argentina de inversiones y
+                    servicios de financiación en línea con gran proyección en América Latina. Brinda soluciones
+                    eficientes y estratégicas a sus clientes, tanto físicas como jurídicas.</p>
+            </div>
+            <div class="w-50 h-auto rounded-5 ms-3 me-auto">
+                <img src="images/about/glo5.png" alt="Imagen de Global Capital Management"
+                    class="img-fluid h-50 w-100 rounded-5" style="object-fit: contain;">
             </div>
         </section>
-        <section class="fullscreen d-flex flex-column justify-content-center align-items-center">
-            <h1 class="poppins-extralight text-black text-center my-5">Bienvenidos a Global Capital Management</h1>
-            <article class="w-75 mx-auto my-5 h-50" style="position: relative;">
-                <video autoplay muted loop preload="metadata" poster="images/home/poster.jpg"
-                    style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 0; border-radius: 45pt;">
-                    <source src="videos/intro-optimized.mp4" type="video/mp4" />
-                    Tu navegador no soporta el video.
-                </video>
-                <div class="w-75 d-flex flex-column justify-content-center align-items-center h-100 mx-auto"
-                    style="z-index: 1; position: relative;">
-                    <h1 class="poppins-medium text-white text-center my-2" style="font-size: 28pt;">Tu tranquilidad financiera,</h1>
-                    <h2 class="poppins-black text-uppercase text-white text-center my-2" style="font-size: 37pt;">nuestra prioridad.</h2>
-                    <p class="poppins-regular text-white text-center my-5" style="font-size: 14pt;">Una compañia argentina de inversiones y
-                        servicios de financiación en línea con gran proyección en América Latina. Brinda soluciones
-                        eficientes y estratégicas a sus clientes, tanto físicas como jurídicas.</p>
-                </div>
-            </article>
-        </section>
+
+        <script>
+            function scaleTextToAvailableWidth(textEl, marginRem = 0.5) {
+                const container = textEl.parentElement;
+                const style = getComputedStyle(document.documentElement);
+                const rem = parseFloat(style.fontSize); // px por rem
+
+                const marginPx = marginRem * 0 * rem; // mx-2 es 0.5rem x 2 lados
+                const availableWidth = container.offsetWidth - marginPx;
+
+                textEl.style.transform = 'scale(1)'; // reset
+                const textWidth = textEl.offsetWidth;
+                const scale = availableWidth / textWidth;
+
+                textEl.style.transform = `scale(${scale})`;
+            }
+
+            const textEl = document.querySelectorAll('#text, #text *');
+
+            textEl.forEach(el => {
+                if (el.nodeType === Node.ELEMENT_NODE) {
+                    el.style.display = 'inline-block'; // Aseguramos que sea inline-block para medir correctamente
+                }
+            });
+
+            function resize() {
+                textEl.forEach(el => {
+                    if (el.nodeType === Node.ELEMENT_NODE) {
+                        scaleTextToAvailableWidth(el, 0.5); // Ajusta el margen según sea necesario
+                    }
+                });
+            }
+
+            window.addEventListener('load', resize);
+            window.addEventListener('resize', resize);
+        </script>
+
         <section class="quarterscreen d-flex flex-column justify-content-center align-items-center">
             <div class="w-100 d-flex flex-column justify-content-center align-items-center mx-auto">
                 <h1 class="w-50 poppins-semibold mx-auto text-center"
-                    style="color: #498094 !important; text-shadow: none; font-size: 4rem;">INNOVACIÓN QUE TRANSFORMA
+                    style="color: #5CA4BE !important; text-shadow: none; font-size: 4rem;">INNOVACIÓN QUE TRANSFORMA
                 </h1>
             </div>
         </section>
@@ -110,13 +158,13 @@
             <div class="container">
                 <div class="row anim-container">
                     <!-- Texto fijo, sin animación -->
-                    <div class="col-4 bg-white text-black px-5 rounded-5 d-flex flex-column justify-content-center"
+                    <div class="col-4 bg-white px-5 rounded-5 d-flex flex-column justify-content-center"
                         style="height: 50vh;">
-                        <p class="poppins-regular mx-auto my-0 poppins-regular text-justify">
-                            Ofrecemos <span class="poppins-bold" style="color: #498094;">soluciones y servicios confiables</span> para la
+                        <p class="poppins-regular mx-auto my-0 poppins-regular text-justify" style="color: #15182E;">
+                            Ofrecemos <span class="poppins-bold" style="color: #5CA4BE;">soluciones y servicios confiables</span> para la
                             satisfacción de nuestros clientes, actuando en equipo para desarrollar relaciones
                             perdurables y gestionar de forma eficiente todos los sectores, <span
-                                class="poppins-bold" style="color: #498094;">incrementando el valor de cada empresa.</span>
+                                class="poppins-bold" style="color: #5CA4BE;">incrementando el valor de cada empresa.</span>
                         </p>
                     </div>
 
@@ -135,21 +183,10 @@
                     </div>
                 </div>
             </div>
-            <div class="container mt-5">
-                <div class="row">
-                    <span class="col-4"></span>
-                    <span class="col-4"></span>
-                    <span class="col-2"></span>
-                    <a href="#servicios" class="col-2 btn rounded-pill"
-                        style="box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.3)">
-                        <p class="poppins-semibold my-0 mx-3" style="color: #498094;">Ver servicios</p>
-                    </a>
-                </div>
-            </div>
         </section>
         <section class="threequarterscreen carrusel d-flex flex-column justify-content-flex-start align-items-center"
             id="servicios">
-            <h1 class="poppins-semibold text-black text-center my-5" style="color: #498094 !important;">Nuestros
+            <h1 class="poppins-semibold text-black text-center my-5" style="color: #5CA4BE !important;">Nuestros
                 servicios exclusivos para vos</h1>
             <div class="d-flex flex-row justify-content-center align-items-center w-100 mt-5">
                 <div class="elemento-carrusel w-25 rounded-3 d-none" id="elemento-0">
@@ -229,7 +266,7 @@
                             usuario financiero</a></li>
                     <li class="poppins-light mb-2"><a href="pp-tcc.html" class="" style="color: black;">Préstamos
                             personales: Tasas, cargos y comisiones</a></li>
-                    <li class="poppins-light mb-2"><a href="ca.html" class="" style="color: black;">Contratos de adhesión
+                    <li class="poppins-light mb-2"><a href="https://www.argentina.gob.ar/justicia/derechofacil/leysimple/defensa-del-consumidor" target="_blank" class="" style="color: black;">Contratos de adhesión
                             - Ley 24.240</a></li>
                     <li class="poppins-light mb-2"><a href="dc.html" class="" style="color: black;">Defensa del
                             consumidor</a></li>
@@ -314,6 +351,26 @@
         <script src="js/toggle.menu.js"></script>
         <script src="js/images.animation.js"></script>
     </footer>
+
+    <script>
+            let autoScroll = document.querySelector('.auto-scroll');
+
+            autoScroll.style.backgroundImage = `url('images/about/glo1-sh.png')`;
+
+            let contador = 2;
+
+            setInterval(() => {
+
+                if (contador > 4) {
+                    contador = 1;
+                }
+
+                autoScroll.style.backgroundImage = `url('images/about/glo${contador}-sh.png')`;
+
+                contador++;
+            }, 2000);
+
+        </script>
 </body>
 
 </html>
