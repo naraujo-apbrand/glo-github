@@ -41,6 +41,12 @@
             overflow: hidden;
             z-index: -1;
         }
+
+        .scaled-text {
+            white-space: nowrap;
+            display: inline-block;
+            transform-origin: center;
+        }
     </style>
     <header class="d-flex justify-content-between align-items-center w-100 px-5 position-fixed"
         style="height: 120px; background-color: #498094 !important; z-index: 1000 !important;">
@@ -99,9 +105,9 @@
         <section class="threequarterscreen w-75 d-flex flex-row justify-content-center align-items-center mx-auto">
             <div class="w-50 h-auto d-flex flex-column justify-content-center align-items-center ms-auto me-5">
                 <h1 class="poppins-regular text-center my-2" style="color: #15182E; font-size: 14pt !important;">Bienvenidos a <span class="poppins-semibold">Global Capital Management</span></h1>
-                <h2 class="poppins-medium text-center mt-2" style="color: #5CA4BE; font-size: 28pt; white-space: nowrap; display: inline-block; transform-origin: center;">Tu tranquilidad financiera,</h1>
-                <h3 id="text" class="poppins-black text-uppercase text-center mb-4" style="color: #5CA4BE; font-size: 37pt; white-space: nowrap; display: inline-block; transform-origin: center;">nuestra prioridad.</h2>
-                <p id="text" class="poppins-regular my-4" style="color: #15182E; font-size: 14pt;">Una compañia argentina de inversiones y
+                <h2 class="scaled-text poppins-medium text-center mt-2" style="color: #5CA4BE; font-size: 28pt;">Tu tranquilidad financiera,</h2>
+                <h3 class="scaled-text poppins-black text-uppercase text-center mb-4" style="color: #5CA4BE; font-size: 37pt;">nuestra prioridad.</h3>
+                <p class="poppins-regular my-4" style="color: #15182E; font-size: 14pt;">Una compañia argentina de inversiones y
                     servicios de financiación en línea con gran proyección en América Latina. Brinda soluciones
                     eficientes y estratégicas a sus clientes, tanto físicas como jurídicas.</p>
             </div>
@@ -112,34 +118,27 @@
         </section>
 
         <script>
-            function scaleTextToAvailableWidth(textEl, marginRem = 0.5) {
+            function scaleTextToAvailableWidth(textEl) {
                 const container = textEl.parentElement;
-                const style = getComputedStyle(document.documentElement);
-                const rem = parseFloat(style.fontSize); // px por rem
 
-                const marginPx = marginRem * 0 * rem; // mx-2 es 0.5rem x 2 lados
-                const availableWidth = container.offsetWidth - marginPx;
+                const availableWidth = container.offsetWidth;
 
-                textEl.style.transform = 'scale(1)'; // reset
+                textEl.style.transform = 'scale(1)'; // Resetear escala previa
                 const textWidth = textEl.offsetWidth;
+
+                if (textWidth === 0) return;
+
                 const scale = availableWidth / textWidth;
 
                 textEl.style.transform = `scale(${scale})`;
             }
 
-            const textEl = document.querySelectorAll('#text, #text *');
-
-            textEl.forEach(el => {
-                if (el.nodeType === Node.ELEMENT_NODE) {
-                    el.style.display = 'inline-block'; // Aseguramos que sea inline-block para medir correctamente
-                }
-            });
-
             function resize() {
-                textEl.forEach(el => {
-                    if (el.nodeType === Node.ELEMENT_NODE) {
-                        scaleTextToAvailableWidth(el, 0.5); // Ajusta el margen según sea necesario
-                    }
+                const textEls = document.querySelectorAll('.scaled-text');
+                textEls.forEach(el => {
+                if (el.nodeType === Node.ELEMENT_NODE) {
+                    scaleTextToAvailableWidth(el);
+                }
                 });
             }
 
